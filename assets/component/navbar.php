@@ -1,3 +1,9 @@
+<?php
+include_once('./controller/UserController.php');
+$user = new User();
+$id = $_SESSION['id'];
+$kasir = $user->get_user($id);
+?>
 <div class="col-md-11 fluid p-3">
     <nav class="navbar navbar-default navbar-expand-lg navbar-light ">
 
@@ -13,6 +19,12 @@
 
 
             <ul class="navbar-nav ml-md-auto">
+                <li class="nav-item">
+                    <div>
+                        <span><?php echo $kasir['nama_kasir'] ?></span>
+                    </div>
+                </li>
+
                 <li class="nav-item ">
 
                     <div>
@@ -22,7 +34,6 @@
                         </button>
                     </div>
 
-                    </button>
                 </li>
 
             </ul>

@@ -1,3 +1,17 @@
+<?php
+session_start();
+include_once('./controller/UserController.php');
+$user = new User();
+$id = $_SESSION['id'];
+$kasir = $user->get_user($id);
+if (!$user->get_session()) {
+    header('/public/login.php');
+}
+if (isset($_GET['q'])) {
+    $user->logout();
+    header('/public/login.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 

@@ -5,14 +5,22 @@ $user = new User();
 
 if (isset($_POST['submit'])) {
     $id = $user->db->escape_string($_POST['id']);
+    $nama = $user->db->escape_string($_POST['nama']);
     $password = $user->db->escape_string($_POST['password']);
-    $login = $user->login($id, $password);
-    if ($login) {
-        // Registration Success
-        header("location:../index.php");
+    $regis = $user->store($id, $nama, $password);
+    if ($regis) {
+        //Registration success
+        $login = $user->login($id, $password);
+        if ($login) {
+            // Registration Success
+            header("location:../index.php");
+        } else {
+            // Registration Failed
+            echo 'ID atau Password salah';
+        }
+        header("location:../index.php?message=regisOk");
     } else {
-        // Registration Failed
-        echo 'Wrong username or password';
+        echo "Registrasi gagal";
     }
 }
 ?>
@@ -31,11 +39,13 @@ if (isset($_POST['submit'])) {
         function submitlogin() {
             var form = document.login;
             if (form.id.value == "") {
-                alert("Enter email or username.");
+                alert("Enter id");
                 return false;
             } else if (form.password.value == "") {
                 alert("Enter password.");
                 return false;
+            } else if (form.nama.value == "") {
+                alert("Enter name.")
             }
         }
     </script>
@@ -44,12 +54,16 @@ if (isset($_POST['submit'])) {
         <div id="container">
     </span>
     <h1>Login Here</h1>
-    <form action="login.php" method="post" name="login">
+    <form action="" method="post" name="login">
         <table>
             <tbody>
                 <tr>
                     <th>ID</th>
                     <td><input type="text" name="id" required="" /></td>
+                </tr>
+                <tr>
+                    <th>Nama</th>
+                    <td><input type="text" name="nama" required="" /></td>
                 </tr>
                 <tr>
                     <th>Password:</th>
