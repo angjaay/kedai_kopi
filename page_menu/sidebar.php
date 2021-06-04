@@ -1,19 +1,18 @@
-<div class="col-md-1 ">
+<div class="col-md-2 tosca text-white">
     <nav id="sidebar" class="active">
-        <h1><a href="index.html" class="logo">K.</a></h1>
+        <br>
         <ul class="list-unstyled components mb-5">
+            <font size=4 color=white>
             <li class="active">
-                <a href="#"><span class="fa fa-home"></span> Coffee</a>
+                <a href="#"><span class="fa fa-home"></span> Daftar Transaksi</a>
             </li>
             <li>
-                <a href="#"><span class="fa fa-user"></span> Light meal</a>
+                <a href="#"><span class="fa fa-user"></span> Daftar Menu</a>
             </li>
             <li>
-                <a href="#"><span class="fa fa-sticky-note"></span> Main Course</a>
+                <a href="#"><span class="fa fa-sticky-note"></span> Profil</a>
             </li>
-            <li>
-                <a href="#"><span class="fa fa-cogs"></span> Dessert</a>
-            </li>
+            </font>
         </ul>
     </nav>
 </div>
