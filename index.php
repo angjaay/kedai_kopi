@@ -1,7 +1,9 @@
 <?php
 session_start();
 include_once('./controller/UserController.php');
+include_once('./controller/MenuController.php');
 $user = new User();
+$menu = new Menu();
 $id = $_SESSION['id'];
 $kasir = $user->get_user($id);
 if (!$user->get_session()) {
@@ -58,7 +60,19 @@ if (isset($_GET['q'])) {
                                 </div>
                             </div>
                         </div>
-
+                        <?php
+                        foreach ($menu->get_all() as $data) { ?>
+                            <div class="col-md-4">
+                                <div class="container">
+                                    <div class="harga"><?php echo $data["harga"] ?></div>
+                                    <div class="menu"><?php echo $data["nama_menu"] ?></div>
+                                    <img src="assets/images/ayam bakar.jpeg" alt="ayam bakar" class="image shadow-md">
+                                    <div class="overlay">
+                                        <button class="btn-grad">Tambah</button>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php } ?>
                     </div>
                 </div>
                 <div class="col-md-4">

@@ -12,30 +12,22 @@ $kasir = $user->get_user($id);
             <small>Coffe and Tea</small>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="navbar-nav">
-
-
-            </ul>
-
-
-            <ul class="navbar-nav ml-md-auto">
-                <li class="nav-item">
-                    <div>
-                        <span><?php echo $kasir['nama_kasir'] ?></span>
-                    </div>
-                </li>
-
-                <li class="nav-item ">
-
-                    <div>
-                        <button class="btn btn-success">
-                            <span class="bi-cart-fill"></span>
-                            <span>0</span>
-                        </button>
-                    </div>
-
-                </li>
-
-            </ul>
+            <div class="container">
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                        <?php if (isset($id)) : ?>
+                            <li class="nav-item"><a class="nav-link js-scroll-trigger" href=""><?php echo $kasir['nama_kasir'] ?> <i class="fa fa-power-off"></i></a></li>
+                        <?php else : ?>
+                            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../../public/login.php">Login</a></li>
+                        <?php endif; ?>
+                        <li class="nav-item"><button class="btn btn-success">
+                                <span class="bi-cart-fill"></span>
+                                <span>0</span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </nav>
