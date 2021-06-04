@@ -14,12 +14,14 @@
 
             <ul class="navbar-nav ml-md-auto">
                 <li class="nav-item ">
+
                     <div>
                         <button class="btn btn-success">
                             <span class="bi-cart-fill"></span>
                             <span>0</span>
                         </button>
                     </div>
+
                     </button>
                 </li>
 
