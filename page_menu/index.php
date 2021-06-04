@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="assets/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    
 
     <style>
         #sidebar {
@@ -24,7 +25,9 @@
         .tosca{
             background: #73c9bb;
         }
-
+        li{
+            margin: 4px 0;
+        }
     </style>
 </head>
 
@@ -48,24 +51,25 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <h5 class="card-header">
-                            Card title
-                        </h5>
-                        <div class="card-body">
-                            <p class="card-text">
-                                Card content
-                            </p>
-                        </div>
-                        <div class="card-footer">
-                            Card footer
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
+    <div class="row">
+                        <div class="col-md-4">
+    <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+      </tr>
 
 
 
