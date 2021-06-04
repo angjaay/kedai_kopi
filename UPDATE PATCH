@@ -3,3 +3,4 @@
 - Add the registration system
 - Now after you login in (url:localhost/kedai_kopi/public/login.php), you can see who is logged in in navbar
 - Now after you registrating you also login and redirected to index.php
+- Now you can see the menus in the index page
