@@ -25,9 +25,9 @@
     <div class="container-fluid bg-light">
         <div class="row">
             <!--Sidebar-->
-            <?php include 'sidebar.php' ?>
+            <?php include 'assets/component/sidebar.php' ?>
             <!--Navbar-->
-            <?php include 'navbar.php' ?>
+            <?php include 'assets/component/navbar.php' ?>
 
             <div class="row">
                 <div class="col-md-8">
