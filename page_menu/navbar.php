@@ -3,7 +3,7 @@
 
         <div class="">
             <h2>KalaSenja</h2>
-            <small>Coffee & Tea</small>
+            <small>Coffee and Tea</small>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="navbar-nav">
