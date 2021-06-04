@@ -23,6 +23,7 @@
 
 <body>
     <div class="container-fluid bg-light">
+
         <div class="row">
             <!--Sidebar-->
             <?php include 'assets/component/sidebar.php' ?>
@@ -33,32 +34,16 @@
                 <div class="col-md-8">
                     <div class="row">
                         <div class="col-md-4">
-
-                            <a href="" class="card">
-                                <img src="https://i.imgur.com/oYiTqum.jpg" class="card__image" alt="" />
-                                <div class="card__overlay">
-                                    <div class="card__header">
-                                        <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
-                                            <path />
-                                        </svg>
-                                        <img class="card__thumb" src="https://i.imgur.com/7D7I6dI.png" alt="" />
-                                        <div class="card__header-text">
-                                            <h3 class="card__title">Jessica Parker</h3>
-                                            <span class="card__status">1 hour ago</span>
-                                        </div>
-                                    </div>
-                                    <p class="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
+                            <div class="container">
+                                <div class="harga">Rp. 26.000</div>
+                                <div class="menu">Ayam Bakar</div>
+                                <img src="assets/images/ayam bakar.jpeg" alt="ayam bakar" class="image shadow-md">
+                                <div class="overlay">
+                                    <button class="btn-grad">Tambah</button>
                                 </div>
-                            </a>
-
+                            </div>
                         </div>
 
-                        <div class="col-md-4">
-
-                        </div>
-                        <div class="col-md-4">
-
-                        </div>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -77,6 +62,9 @@
                         </div>
                     </div>
                 </div>
+
+
+
             </div>
         </div>
     </div>
