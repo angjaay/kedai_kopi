@@ -13,9 +13,16 @@
 
 
             <ul class="navbar-nav ml-md-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#"><font size =5>Logout <span class="bi bi-box-arrow-right"></font></span></a>
-
+                <li class="nav-item">
+                    <div>
+                         <button class="btn">
+                         <font size =5>
+                         <span>Logout </span>
+                         <span class="bi bi-box-arrow-right"></span>
+                         </font>
+                         </button>
+                        
+                    </div>
                 </li>
 
             </ul>
