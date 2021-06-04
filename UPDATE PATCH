@@ -1,5 +1,5 @@
 6/5/2021 - REICHAN MUHAMMAD
-- Fix the login sytem
+- Fix the login system
 - Add the registration system
 - Now after you login in (url:localhost/kedai_kopi/public/login.php), you can see who is logged in in navbar
 - Now after you registrating you also login and redirected to index.php
