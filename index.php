@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aplikasi Pemesanan Kopi</title>
     <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/card.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <style>
         #sidebar {
             min-height: 100vh;
@@ -31,14 +33,36 @@
                 <div class="col-md-8">
                     <div class="row">
                         <div class="col-md-4">
+
+                            <a href="" class="card">
+                                <img src="https://i.imgur.com/oYiTqum.jpg" class="card__image" alt="" />
+                                <div class="card__overlay">
+                                    <div class="card__header">
+                                        <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                                            <path />
+                                        </svg>
+                                        <img class="card__thumb" src="https://i.imgur.com/7D7I6dI.png" alt="" />
+                                        <div class="card__header-text">
+                                            <h3 class="card__title">Jessica Parker</h3>
+                                            <span class="card__status">1 hour ago</span>
+                                        </div>
+                                    </div>
+                                    <p class="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
+                                </div>
+                            </a>
+
+                        </div>
+
+                        <div class="col-md-4">
+
                         </div>
                         <div class="col-md-4">
-                        </div>
-                        <div class="col-md-4">
+
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
+
                     <div class="card">
                         <h5 class="card-header">
                             Card title
