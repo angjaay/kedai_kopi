@@ -11,10 +11,10 @@
 
             </ul>
 
-            
+
             <ul class="navbar-nav ml-md-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Logout<i class="bi bi-box-arrow-right"></i></span></a>
+                    <a class="nav-link" href="#">Logout<i class="bi box-arrow-right"></i></span></a>
 
                 </li>
 
