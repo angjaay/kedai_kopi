@@ -1,4 +1,4 @@
-<div class="col-md-11 fluid p-3">
+<div class="col-md-12 fluid">
     <nav class="navbar navbar-default navbar-expand-lg navbar-light hijau">
 
         <div class="">
@@ -15,13 +15,13 @@
             <ul class="navbar-nav ml-md-auto">
                 <li class="nav-item">
                     <div>
-                         <button class="btn">
-                         <font size =5>
-                         <span>Logout </span>
-                         <span class="bi bi-box-arrow-right"></span>
-                         </font>
-                         </button>
-                        
+                        <button class="btn">
+                            <font size=5>
+                                <span>Logout </span>
+                                <span class="bi bi-box-arrow-right"></span>
+                            </font>
+                        </button>
+
                     </div>
                 </li>
 
