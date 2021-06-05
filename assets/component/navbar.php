@@ -28,6 +28,13 @@ if (isset($_SESSION['id'])) {
                                 <span>0</span>
                             </button>
                         </li>
+                        <li class="nav-item">
+                            <a href="index.php?q=logout">
+                                <button class="btn btn-alert">
+                                    <span>Logout</span>
+                                </button>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
