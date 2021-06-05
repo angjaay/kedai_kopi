@@ -2,7 +2,7 @@
 session_start();
 include_once('./controller/UserController.php');
 include_once('./controller/MenuController.php');
-if (!$_SESSION['login']) {
+if ($_SESSION['login']) {
     $id = $_SESSION['id'];
     $user = new User();
     $menu = new Menu();
