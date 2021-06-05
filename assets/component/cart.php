@@ -42,7 +42,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12"><button class="btn btn-danger btn-block">Bayar Pesanans</button></div>
+            <div class="col-md-12"><button class="btn btn-danger btn-block">Bayar Pesanan</button></div>
         </div>
     </div>
 </div>
