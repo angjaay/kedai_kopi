@@ -2,16 +2,22 @@
 session_start();
 include_once('./controller/UserController.php');
 include_once('./controller/MenuController.php');
-$user = new User();
-$menu = new Menu();
-$id = $_SESSION['id'];
-$kasir = $user->get_user($id);
-if (!$user->get_session()) {
-    header('/public/login.php');
-}
-if (isset($_GET['q'])) {
-    $user->logout();
-    header('/public/login.php');
+if (!isset($_SESSION['id'])) {
+    header('./public/login.php');
+} else {
+    $id = $_SESSION['id'];
+    $user = new User();
+    $menu = new Menu();
+    $kasir = $user->get_user($id);
+
+    if (!$user->get_session()) {
+        header('./public/login.php');
+    }
+
+    if (isset($_GET['q'])) {
+        $user->logout();
+        header('/public/login.php');
+    }
 }
 ?>
 <!DOCTYPE html>

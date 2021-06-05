@@ -1,8 +1,10 @@
 <?php
 include_once('./controller/UserController.php');
 $user = new User();
-$id = $_SESSION['id'];
-$kasir = $user->get_user($id);
+if (isset($_SESSION['id'])) {
+    $id = $_SESSION['id'];
+    $kasir = $user->get_user($id);
+}
 ?>
 <div class="col-md-11 fluid p-3">
     <nav class="navbar navbar-default navbar-expand-lg navbar-light ">
