@@ -17,17 +17,26 @@ if (isset($_SESSION['id'])) {
             <div class="container">
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                    <ul class="navbar-nav ml-auto my-2 my-lg-0 left-menu" style="left:20px;">
+
                         <?php if (isset($id)) : ?>
-                            <li class="nav-item"><a class="nav-link js-scroll-trigger" href=""><?php echo $kasir['nama_kasir'] ?> <i class="fa fa-power-off"></i></a></li>
+                            <li class="nav-item">
+                                <h5><a class="nav-link js-scroll-trigger" href="">
+                                        <?php echo $kasir['nama_kasir'] ?> <i class="fa fa-power-off"></i>
+                                    </a>
+                                </h5>
+                            </li>
                         <?php else : ?>
-                            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../../public/login.php">Login</a></li>
+                            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../../public/login.php">Login</a>
+                            </li>
                         <?php endif; ?>
+
                         <li class="nav-item"><button class="btn btn-success">
                                 <span class="bi-cart-fill"></span>
                                 <span>0</span>
                             </button>
                         </li>
+
                     </ul>
                 </div>
             </div>
