@@ -11,14 +11,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
     <style>
-        #sidebar {
-            min-height: 100vh;
-        }
-
-        .napbar {
-            min-width: 90hv;
-        }
-
         .hijau {
             background: #38ef7d;
         }
@@ -35,8 +27,9 @@
 
 
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid bg-light">
         <div class="row">
+        
             <!--Navbar-->
             <?php include 'navbar.php' ?>
 
@@ -49,7 +42,7 @@
                     <div class="col-md-4">
                         <?php include 'tabel.php' ?>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-1">
                         <?php include 'tabel2.php' ?>
 
                     </div>
