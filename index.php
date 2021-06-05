@@ -42,6 +42,23 @@ if ($_SESSION['login']) {
         .napbar {
             min-width: 90hv;
         }
+
+        .cart {
+            border-radius: 20px;
+            background: rgb(17, 153, 142);
+            background: linear-gradient(31deg, rgba(17, 153, 142, 1) 0%, rgba(56, 239, 125, 1) 100%);
+            color: #fff;
+        }
+
+        .card-header {
+            border-radius: 15px;
+        }
+
+        .cart h4 {
+
+            margin-top: 2px;
+            color: #fff;
+        }
     </style>
 </head>
 
@@ -71,7 +88,7 @@ if ($_SESSION['login']) {
                         foreach ($menu->get_all() as $data) { ?>
                             <div class="col-md-4">
                                 <div class="container">
-                                    <div class="harga"><?php echo $data["harga"] ?></div>
+                                    <div class="harga">Rp. <?php echo $data["harga"] ?></div>
                                     <div class="menu"><?php echo $data["nama_menu"] ?></div>
                                     <img src="assets/images/ayam bakar.jpeg" alt="ayam bakar" class="image shadow-md">
                                     <div class="overlay">
