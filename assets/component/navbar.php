@@ -14,7 +14,7 @@ if (isset($_SESSION['id'])) {
             <small>Coffe and Tea</small>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <div class="container">
+            <div class="container" style="top:20px;">
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto my-2 my-lg-0 left-menu" style="left:20px;">
@@ -30,19 +30,22 @@ if (isset($_SESSION['id'])) {
                             <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../../public/login.php">Login</a>
                             </li>
                         <?php endif; ?>
+                        <li class="nav-item">
+                            <h5>
+                                <a class="nav-link" href="index.php?q=logout">
+
+                                    <span>Logout</span>
+
+                                </a>
+                            </h5>
+                        </li>
 
                         <li class="nav-item"><button class="btn btn-success">
                                 <span class="bi-cart-fill"></span>
                                 <span>0</span>
                             </button>
                         </li>
-                        <li class="nav-item">
-                            <a href="index.php?q=logout">
-                                <button class="btn btn-alert">
-                                    <span>Logout</span>
-                                </button>
-                            </a>
-                        </li>
+
 
                     </ul>
                 </div>
