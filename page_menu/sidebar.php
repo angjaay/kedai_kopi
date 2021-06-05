@@ -24,9 +24,9 @@
                         <button class="btn text-white btn-outline-light btn-block mb-2">
                         <h6>Profil</h6>
                         <span class=""></span>
-                        </button>
-                    </div>
-                </li>   
+                    </button>
+                </div>
+            </li>
         </ul>
     </nav>
 </div>

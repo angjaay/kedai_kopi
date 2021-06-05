@@ -23,7 +23,10 @@ if (isset($_POST['submit'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login Dashboard Admin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="../assets/login.css">
 </head>
 
 <body>
@@ -40,34 +43,21 @@ if (isset($_POST['submit'])) {
         }
     </script>
 
-    <span style="font-family: 'Courier 10 Pitch', Courier, monospace; font-size: 13px; font-style: normal; line-height: 1.5;">
-        <div id="container">
-    </span>
-    <h1>Login Here</h1>
-    <form action="login.php" method="post" name="login">
-        <table>
-            <tbody>
-                <tr>
-                    <th>ID</th>
-                    <td><input type="text" name="id" required="" /></td>
-                </tr>
-                <tr>
-                    <th>Password:</th>
-                    <td><input type="password" name="password" required="" /></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td><input onclick="return(submitlogin());" type="submit" name="submit" value="Login" /></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td><a href="registration.php">Register new user</a></td>
-                </tr>
-            </tbody>
-        </table>
-    </form>
+
+
+    <div class="login-dark">
+        <form method="post" action="login.php" name="login">
+            <h2 class="sr-only">Login Form</h2>
+            <div class="illustration"><img src="../assets/images/login.svg" alt="login"></div>
+            <div class="form-group"><input class="form-control" type="text" name="id" placeholder="Username" required></div>
+            <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password"></div>
+            <div class="form-group"><input class="btn btn-primary btn-block" onclick="return(submitlogin());" type="submit" name="submit" value="Login"></div><a href="registration.php" class="forgot">Register new user</a>
+        </form>
     </div>
 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
