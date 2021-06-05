@@ -10,20 +10,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
-    <style>
-        #sidebar {
-            min-height: 100vh;
-        }
-        .napbar {
-            min-width: 90hv;
-        }
-    </style>
 </head>
 <body>
-<div class="container w-50">         
-  <table class="table table-bordered">
-  <br>
-    <thead>
+<div class="container w-auto">         
+  <table class="table table-bordered shadow p-4 mb-4">
+  <br><br><br><br>
+    <thead class="thead-dark">
       <tr>
         
         <th><center>No</center></th>

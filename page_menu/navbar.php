@@ -1,5 +1,5 @@
-<div class="col-md-12 fluid">
-    <nav class="navbar navbar-default navbar-expand-lg navbar-light hijau">
+<div class="col-md-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light hijau fixed-top">
 
         <div class="">
             <h2>KalaSenja</h2>
