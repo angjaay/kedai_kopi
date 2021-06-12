@@ -1,3 +1,8 @@
+<?php
+include_once '../controller/KategoriController.php';
+$kategori = new Kategori();
+$data_kategori = $kategori->get_all();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +20,7 @@
 <body>
     <div class="container w-auto">
         <table class="table table-bordered shadow p-4 mb-4">
-        <br><br><br><br>
+            <br><br><br><br>
             <thead class="thead-dark">
                 <tr>
                     <th>
@@ -46,10 +51,10 @@
                             </div>
                             <br>Kategori
                             <select name="makanan" class="custom-select">
-                                <option selected>Makanan</option>
-                                <option value="#">Ayam Bakar</option>
-                                <option value="#">..</option>
-                                <option value="#">..</option>
+                                <option>Pilih Kategori</option>
+                                <?php foreach ($data_kategori as $data) { ?>
+                                    <option value="<?php echo $data['id_kategori']; ?>"><?php echo $data['nama_kategori']; ?></option>
+                                <?php } ?>
                             </select>
                         </form>
                         <br><br>
