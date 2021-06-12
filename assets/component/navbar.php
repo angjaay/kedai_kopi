@@ -19,25 +19,22 @@ if (isset($_SESSION['id'])) {
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto my-2 my-lg-0 left-menu" style="left:20px;">
 
-                        <?php if (isset($id)) : ?>
-                            <li class="nav-item">
-                                <h5><a class="nav-link js-scroll-trigger" href="">
-                                        <?php echo $kasir['nama_kasir'] ?> <i class="fa fa-power-off"></i>
-                                    </a>
-                                </h5>
-                            </li>
-                        <?php else : ?>
-                            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../../public/login.php">Login</a>
-                            </li>
-                        <?php endif; ?>
+
                         <li class="nav-item">
-                            <h5>
-                                <a class="nav-link" href="index.php?q=logout">
-
-                                    <span>Logout</span>
-
-                                </a>
-                            </h5>
+                            <div class="btn-group">
+                                <button type="button" class="btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <h5>
+                                        <i class="bi bi-person-circle"></i> <?php echo $kasir['nama_kasir'] ?>
+                                    </h5>
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Admin Page</a>
+                                    <a class="dropdown-item" href="#">Transaksi</a>
+                                    <a class="dropdown-item" href="#">Akun</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="index.php?q=logout">Logout <i class="bi bi-power"></i></a>
+                                </div>
+                            </div>
                         </li>
 
                         <li class="nav-item"><button class="btn btn-success">
