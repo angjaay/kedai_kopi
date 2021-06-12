@@ -28,7 +28,7 @@ if (isset($_SESSION['id'])) {
                                     </h5>
                                 </button>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">Admin Page</a>
+                                    <a class="dropdown-item" href="admin_page/index.php">Admin Page</a>
                                     <a class="dropdown-item" href="#">Transaksi</a>
                                     <a class="dropdown-item" href="#">Akun</a>
                                     <div class="dropdown-divider"></div>
