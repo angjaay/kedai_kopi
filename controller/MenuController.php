@@ -30,6 +30,7 @@ class Menu
     // Get count menu from database
     // @return $menu1[]
 
+
     public function get_count()
     {
         $sql3 = "SELECT COUNT(*) as jmlMenu FROM menu";

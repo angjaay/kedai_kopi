@@ -28,12 +28,12 @@
                 // $data_transaksi = $transaksi->get_count();
                 ?>
 
-                <h5 class="card-title">Data Barang</h5>
-                <p class="card-text">Jumlah barang saat ini</p>
+                <h5 class="card-title">Data Transaksi</h5>
+                <p class="card-text">Jumlah Transaksi saat ini</p>
                 <h3><?php
                     // echo $transaksi['jmlTrans']; 
                     ?></h3>
-                <a href="data-barang.php" class="card-link">Lihat Data Barang</a>
+                <a href="data-barang.php" class="card-link">Lihat Data Transaksi</a>
             </div>
         </div>
     </div>
