@@ -1,8 +1,9 @@
 <?php
-include("db_config.php");
 
 class Menu
 {
+    public $db;
+
     public function __construct()
     {
         $this->db = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
@@ -37,9 +38,10 @@ class Menu
         $nama_menu = $post['nama_menu'];
         $id_menu = $post['id_menu'];
         $id_kategori = $post['id_kategori'];
+        $status = $post['status'];
         $deskripsi = $post['deskripsi'];
         $harga = $post['harga'];
-        $img_menu = $post['img_menu'];
+        $gambar = $post['gambar'];
 
         $$sql1 = "SELECT id_menu, nama_menu FROM menu
             WHERE id_menu = '$id_menu' AND nama_menu = '$nama_menu'";
@@ -57,8 +59,8 @@ class Menu
                     '$nama_menu',
                     '$deskripsi',
                     '$harga',
-                    'tersedia',
-                    '$img_menu'
+                    '$status',
+                    '$gambar'
                     )";
             $result = mysqli_query($this->db, $sql2) or die(mysqli_connect_errno() . "Data cannot inserted");
             return $result;
