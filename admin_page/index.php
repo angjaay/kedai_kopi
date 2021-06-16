@@ -138,32 +138,32 @@ if ($_SESSION['login']) {
                     <ul id="sidebarnav">
                         <!-- User Profile-->
                         <li class="sidebar-item pt-2">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.php" aria-expanded="false">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="?p=dashboard" aria-expanded="false">
                                 <i class="far fa-compass" aria-hidden="true"></i>
                                 <span class="hide-menu">Dashboard</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#" aria-expanded="false">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="?p=transaksi" aria-expanded="false">
                                 <i class="fa fa-sticky-note" aria-hidden="true"></i>
                                 <span class="hide-menu">Daftar Transaksi</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#" aria-expanded="false">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="?p=menu" aria-expanded="false">
                                 <i class="fa fa-utensils" aria-hidden="true"></i>
                                 <span class="hide-menu">Daftar Menu</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#" aria-expanded="false">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="?p=kategori" aria-expanded="false">
                                 <i class="fa fa-list" aria-hidden="true"></i>
                                 <span class="hide-menu">Daftar Kategori</span>
                             </a>
                         </li>
 
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#" aria-expanded="false">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="?p=user" aria-expanded="false">
                                 <i class="fa fa-users" aria-hidden="true"></i>
                                 <span class="hide-menu">User</span>
                             </a>
@@ -189,7 +189,23 @@ if ($_SESSION['login']) {
                 <!-- ============================================================== -->
 
                 <!-- Row -->
-                <?php include "page/menu.php" ?>
+
+                <?php
+                // fungsi page
+                if (!isset($_GET['p'])) {
+                    require_once 'page/dashboard.php';
+                } else if ($_GET['p'] == 'dashboard') {
+                    require_once 'page/' . $_GET['p'] . '.php';
+                } else if ($_GET['p'] == 'menu') {
+                    require_once 'page/' . $_GET['p'] . '.php';
+                } else if ($_GET['p'] == 'transaksi') {
+                    require_once 'page/' . $_GET['p'] . '.php';
+                } else if ($_GET['p'] == 'kategori') {
+                    require_once 'page/' . $_GET['p'] . '.php';
+                } else if ($_GET['p'] == 'user') {
+                    require_once 'page/' . $_GET['p'] . '.php';
+                }
+                ?>
 
                 <!-- ============================================================== -->
                 <!-- End PAge Content -->
