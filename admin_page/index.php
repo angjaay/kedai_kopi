@@ -1,3 +1,27 @@
+<?php
+session_start();
+include_once('../controller/UserController.php');
+include_once('../controller/MenuController.php');
+if ($_SESSION['login']) {
+    $id = $_SESSION['id'];
+    $user = new User();
+    $menu = new Menu();
+    $kasir = $user->get_user($id);
+
+    if (!$user->get_session()) {
+        header("location:../public/login.php");
+    }
+
+    if (isset($_GET['q'])) {
+        $user->logout();
+        header("location:../public/login.php");
+    }
+} else {
+    header("location:../public/login.php");
+    die();
+}
+?>
+
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
 
@@ -91,7 +115,7 @@
                         <!-- User profile and search -->
                         <!-- ============================================================== -->
                         <li>
-                            <a class="profile-pic" href="#">
+                            <a class="profile-pic" href="index.php?q=logout">
                                 <span class="text-white font-medium">Logout</span> <i class="fa fa-power-off"></i></a>
                         </li>
                         <!-- ============================================================== -->
@@ -144,10 +168,6 @@
                                 <span class="hide-menu">User</span>
                             </a>
                         </li>
-
-
-
-
                     </ul>
 
                 </nav>
@@ -179,13 +199,7 @@
             <!-- ============================================================== -->
             <!-- End Container fluid  -->
             <!-- ============================================================== -->
-            <!-- ============================================================== -->
-            <!-- footer -->
-            <!-- ============================================================== -->
 
-            <!-- ============================================================== -->
-            <!-- End footer -->
-            <!-- ============================================================== -->
         </div>
         <!-- ============================================================== -->
         <!-- End Page wrapper  -->
