@@ -27,6 +27,17 @@ class Menu
         return $menu;
     }
 
+    // Get count menu from database
+    // @return $menu1[]
+
+    public function get_count()
+    {
+        $sql3 = "SELECT COUNT(*) as jmlMenu FROM menu";
+        $result = $this->db->query($sql3);
+        $menu1 = $result->fetch_assoc();
+        return $menu1;
+    }
+
     /**
      * Store menu to the database
      * 

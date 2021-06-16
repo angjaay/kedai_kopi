@@ -5,7 +5,9 @@ include_once('../controller/MenuController.php');
 if ($_SESSION['login']) {
     $id = $_SESSION['id'];
     $user = new User();
+    $user1 = new User();
     $menu = new Menu();
+    $menu1 = new Menu();
     $kasir = $user->get_user($id);
 
     if (!$user->get_session()) {
@@ -65,7 +67,7 @@ if ($_SESSION['login']) {
                     <!-- ============================================================== -->
                     <!-- Logo -->
                     <!-- ============================================================== -->
-                    <a class="navbar-brand" href="dashboard.html">
+                    <a class="navbar-brand" href="../index.php">
                         <!-- Logo icon -->
                         <b class="logo-icon">
                             <!-- Dark Logo icon -->

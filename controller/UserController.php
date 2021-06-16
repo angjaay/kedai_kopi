@@ -37,6 +37,17 @@ class User
     }
 
     /**
+     * Get count user
+     */
+    public function get_count()
+    {
+        $sql4 = "SELECT COUNT(*) as jmlKasir FROM kasir";
+        $result = $this->db->query($sql4);
+        $kasir = $result->fetch_assoc();
+        return $kasir;
+    }
+
+    /**
      * Login
      */
     public function login($id, $password)
