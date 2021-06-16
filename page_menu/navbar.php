@@ -1,3 +1,11 @@
+<?php
+include_once('./controller/UserController.php');
+$user = new User();
+if (isset($_SESSION['id'])) {
+    $id = $_SESSION['id'];
+    $kasir = $user->get_user($id);
+}
+?>
 <div class="col-md-fluid">
     <nav class="navbar navbar-expand-lg navbar-light hijau fixed-top">
 

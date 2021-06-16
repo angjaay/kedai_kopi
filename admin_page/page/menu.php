@@ -12,10 +12,8 @@
                 </tr>
             </thead>
             <tbody>
-
-
-                <div>
-                    <form action="/action_page.php">
+                <form action="/action_page.php">
+                    <div>
                         <div class="form-group">
                             <label for="nama_menu">Nama Menu</label>
                             <input type="text" class="form-control" id="nama_menu" name="nama_menu">
@@ -24,8 +22,7 @@
                             <label for="comment">Deskripsi Menu</label>
                             <textarea class="form-control" rows="5" id="comment" style="height: 50px;"></textarea>
                         </div>
-                </div>
-                <form>
+                    </div>
                     <div class="custom-control custom-switch">
                         <input type="checkbox" class="custom-control-input" id="switch1">
                         <label class="custom-control-label" for="switch1">Tersedia</label>
@@ -37,34 +34,27 @@
                         <option value="#">..</option>
                         <option value="#">..</option>
                     </select>
-                </form>
-                <br><br>
-                <div class="form-group">
-                    <label for="harga">Harga</label>
-                    <input type="text" class="form-control" id="harga" name="harga">
-                </div>
-
-                <form>Gambar
+                    <br><br>
+                    <div class="form-group">
+                        <label for="harga">Harga</label>
+                        <input type="text" class="form-control" id="harga" name="harga">
+                    </div>
                     <div class="custom-file">
                         <input type="file" class="custom-file-input" id="customFile">
 
                     </div>
+                    <script>
+                        $(".custom-file-input").on("change", function() {
+                            var fileName = $(this).val().split("\\").pop();
+                            $(this).siblings(".custom-file-label").addClass("selected")
+                                .html(fileName);
+                        });
+                    </script>
+                    <br>
+                    <div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
                 </form>
-                <script>
-                    $(".custom-file-input").on("change", function() {
-                        var fileName = $(this).val().split("\\").pop();
-                        $(this).siblings(".custom-file-label").addClass("selected")
-                            .html(fileName);
-                    });
-                </script>
-                <br>
-                <div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
-                </div>
-
-
-
             </tbody>
 
         </div>
