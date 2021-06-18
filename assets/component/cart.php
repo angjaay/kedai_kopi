@@ -39,8 +39,8 @@ if (!empty($_SESSION['cart'])) {
 ?>
     <div class="card" style="border-radius: 15px;">
         <div class="card-header cart">
-            <h4><?php echo count($cart); ?> Pesan Baru</h4>
-            <small></small>
+            <h4>Pesan Baru</h4>
+            <small><?php echo count($cart); ?> pesanan dalam keranjang </small>
         </div>
 
 
@@ -56,7 +56,7 @@ if (!empty($_SESSION['cart'])) {
                     </div>
                     <div class="col-md-6">
                         <span><?php echo $cart[$i]['nama_menu'] ?></span><br>
-                        <small><?php echo $cart[$i]['harga'] ?></small>
+                        <small>Rp. <?php echo $cart[$i]['harga'] ?></small>
                     </div>
                     <div class="col-md-5">
                         <input class="float-right" style="width: 50px; text-align: center;" value="<?php echo $cart[$i]['pembelian']; ?>" type="number" name="jumlah" min="1" max="<?php echo $cart[$i]['pembelian']; ?>">
@@ -74,14 +74,12 @@ if (!empty($_SESSION['cart'])) {
             ?>
         </div>
         <div class="card-footer">
-            <form action="" method="POST">
-                <div class="row">
-                    <div class="col-md-6 pull-left">
-                        <input type="text" name="pembeli" placeholder="Atas Nama Pembeli">
-                    </div>
-                    <div class=" col-md-6 float-right">
-                        <button class="btn btn-success float-right">UBAH</button>
-                    </div>
+            <div class="row">
+                <div class="col-md-6 pull-left">
+                    <input type="text" name="pembeli" placeholder="Atas Nama Pembeli">
+                </div>
+                <div class=" col-md-6 float-right">
+                    <button class="btn btn-success float-right">Ubah</button>
                 </div>
                 <div class="row ">
                     <div class="col-md-6 float-left">Total</div>
@@ -94,7 +92,7 @@ if (!empty($_SESSION['cart'])) {
                         <input type="submit" class="btn btn-danger btn-block" value="Bayar" name="bayar">
                     </div>
                 </div>
-            </form>
+                </form>
+            </div>
         </div>
-    </div>
-<?php } ?>
+    <?php } ?>
