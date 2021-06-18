@@ -10,8 +10,10 @@ if (isset($_SESSION['id'])) {
     <nav class="navbar navbar-default navbar-expand-lg navbar-light ">
 
         <div class="">
-            <h2>KalaSenja</h2>
-            <small>Coffe and Tea</small>
+            <div class="logo-text">
+                <img src="assets/images/kalasenja-text.png" alt="logo" />
+            </div>
+
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <div class="container" style="top:20px;">
