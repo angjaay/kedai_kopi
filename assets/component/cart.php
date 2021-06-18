@@ -28,55 +28,66 @@ if (isset($_POST['tambah'])) {
         ];
     }
 }
-if (isset($_SESSION['cart'])) {
-    $cart = unserialize(serialize($_SESSION['cart']));
-    $index = 0;
-    $no = 1;
-    $total = 0;
-    $total_bayar = 0;
-}
+if (!empty($_SESSION['cart'])) {
+    if (isset($_SESSION['cart'])) {
+        $cart = unserialize(serialize($_SESSION['cart']));
+        $index = 0;
+        $no = 1;
+        $total = 0;
+        $total_bayar = 0;
+    }
 ?>
-<div class="card" style="border-radius: 15px;">
-    <div class="card-header cart">
-        <h4><?php echo $no; ?> Pesan Baru</h4>
-        <small></small>
-    </div>
+    <div class="card" style="border-radius: 15px;">
+        <div class="card-header cart">
+            <h4><?php echo count($cart); ?> Pesan Baru</h4>
+            <small></small>
+        </div>
 
 
-    <div class="card-body">
-        <?php for ($i = 0; $i < count($cart); $i++) {
-            $total = $_SESSION['cart'][$i]['harga'] * $_SESSION['cart'][$i]['pembelian'];
-            $total_bayar += $total;
-        ?>
+        <div class="card-body">
+            <?php for ($i = 0; $i < count($cart); $i++) {
+                $total = $_SESSION['cart'][$i]['harga'] * $_SESSION['cart'][$i]['pembelian'];
+                $total_bayar += $total;
+            ?>
+                <div class="row">
+                    <div class="col-md-1">
+                        <a href="?index=<?= $index; ?>"><i class="bi bi-trash align-self-center" style="font-size:1.5rem; color:red !important;"></i></a>
+                    </div>
+                    <div class="col-md-6">
+                        <span><?php echo $cart[$i]['nama_menu'] ?></span><br>
+                        <small><?php echo $cart[$i]['harga'] ?></small>
+                    </div>
+                    <div class="col-md-5">
+                        <input class="float-right" style="width: 50px; text-align: center;" type="number" name="" idMenu="">
+                    </div>
+                </div>
+            <?php $index++;
+            }
+            // hapus produk dalam cart
+            if (isset($_GET['index'])) {
+                $cart = unserialize(serialize($_SESSION['cart']));
+                unset($cart[$_GET['index']]);
+                $cart = array_values($cart);
+                $_SESSION['cart'] = $cart;
+            }
+            ?>
+        </div>
+        <div class="card-footer">
             <div class="row">
-                <div class="col-md-1">
-                    <a href="#"><i class="bi bi-trash align-self-center" style="font-size:1.5rem; color:red !important;"></i></a>
-                </div>
-                <div class="col-md-6">
-                    <span><?php echo $cart[$i]['nama_menu'] ?></span><br>
-                    <small><?php echo $cart[$i]['harga'] ?></small>
-                </div>
-                <div class="col-md-5">
-                    <input class="float-right" style="width: 50px; text-align: center;" type="number" name="" idMenu="">
+                <div class="col-md-6 pull-left">Atasnama</div>
+                <div class=" col-md-6 float-right">
+                    <button class="btn btn-success float-right">ubah</button>
                 </div>
             </div>
-        <?php } ?>
-    </div>
-    <div class="card-footer">
-        <div class="row">
-            <div class="col-md-6 pull-left">Atasnama</div>
-            <div class=" col-md-6 float-right">
-                <button class="btn btn-success float-right">ubah</button>
+            <div class="row ">
+                <div class="col-md-6 float-left">Total</div>
+                <div class=" col-md-6 text-right">
+                    Rp. <?php echo $total_bayar; ?>
+                </div>
             </div>
-        </div>
-        <div class="row ">
-            <div class="col-md-6 float-left">Total</div>
-            <div class=" col-md-6 text-right">
-                <?php echo $total_bayar; ?>
+            <div class="row">
+                <div class="col-md-12"><button class="btn btn-danger btn-block">Bayar Pesanan</button></div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12"><button class="btn btn-danger btn-block">Bayar Pesanan</button></div>
         </div>
     </div>
-</div>
+<?php } ?>

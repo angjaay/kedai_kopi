@@ -19,6 +19,10 @@ if ($_SESSION['login']) {
         $user->logout();
         header("location:./public/login.php");
     }
+
+    if (isset($_GET['index'])) {
+        header('Location: index.php');
+    }
 } else {
     header("location:./public/login.php");
     die();
