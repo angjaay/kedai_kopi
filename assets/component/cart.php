@@ -95,4 +95,41 @@ if (!empty($_SESSION['cart'])) {
             </div>
         </div>
     </div>
-<?php } ?>
+<?php } else {
+?>
+
+    <div class="card" style="border-radius: 15px;">
+        <div class="card-header cart">
+            <h4>Pesan Baru</h4>
+            <small>0 pesanan dalam keranjang </small>
+        </div>
+
+        <div class="card-footer">
+            <div class="row mb-3">
+                <div class="col-md-6 pull-left">
+                    <input class="form-control" type="text" name="pembeli" placeholder="Atasnama Pembeli">
+                </div>
+                <div class=" col-md-6 float-right">
+                    <button class="btn btn-success float-right">Ubah</button>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-md-6 float-left">
+                    <h4>Total :</h4>
+                </div>
+                <div class=" col-md-6 text-right">
+                    Rp. 0
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <input type="submit" value="Bayar Pesanan" name="bayar" class="btn btn-danger btn-block">
+                </div>
+            </div>
+        </div>
+    </div>
+
+<?php
+}
+
+?>
