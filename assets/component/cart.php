@@ -11,9 +11,9 @@ if (isset($_POST['tambah'])) {
 
     // jika produk sudah ada dalam cart maka pembelian akan diupdate
     for ($i = 0; $i < count($cart); $i++) {
-        if ($cart[$i]['id_menu'] == $id) {
+        if ($cart[$i]['id_menu'] == $id_menu) {
             $index = $i;
-            $_SESSION['cart'][$i]['pembelian'] = $pembelian;
+            $_SESSION['cart'][$i]['pembelian'] += $pembelian;
             break;
         }
     }
@@ -45,7 +45,8 @@ if (!empty($_SESSION['cart'])) {
 
 
         <div class="card-body">
-            <?php for ($i = 0; $i < count($cart); $i++) {
+            <?php
+            for ($i = 0; $i < count($cart); $i++) {
                 $total = $_SESSION['cart'][$i]['harga'] * $_SESSION['cart'][$i]['pembelian'];
                 $total_bayar += $total;
             ?>
@@ -58,7 +59,7 @@ if (!empty($_SESSION['cart'])) {
                         <small><?php echo $cart[$i]['harga'] ?></small>
                     </div>
                     <div class="col-md-5">
-                        <input class="float-right" style="width: 50px; text-align: center;" type="number" name="" idMenu="">
+                        <input class="float-right" style="width: 50px; text-align: center;" value="<?php echo $cart[$i]['pembelian']; ?>" type="number" name="jumlah" min="1" max="<?php echo $cart[$i]['pembelian']; ?>">
                     </div>
                 </div>
             <?php $index++;
@@ -74,9 +75,11 @@ if (!empty($_SESSION['cart'])) {
         </div>
         <div class="card-footer">
             <div class="row">
-                <div class="col-md-6 pull-left">Atasnama</div>
+                <div class="col-md-6 pull-left">
+                    <input type="text" name="pembeli" placeholder="Atas Nama Pembeli">
+                </div>
                 <div class=" col-md-6 float-right">
-                    <button class="btn btn-success float-right">ubah</button>
+                    <button class="btn btn-success float-right">UBAH</button>
                 </div>
             </div>
             <div class="row ">
@@ -86,7 +89,9 @@ if (!empty($_SESSION['cart'])) {
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-12"><button class="btn btn-danger btn-block">Bayar Pesanan</button></div>
+                <div class="col-md-12">
+                    <input type="submit" value="Bayar Pesanan" name="bayar" class="btn btn-danger btn-block">
+                </div>
             </div>
         </div>
     </div>
