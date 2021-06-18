@@ -54,10 +54,10 @@ if (isset($_SESSION['cart'])) {
                 </div>
                 <div class="col-md-6">
                     <span><?php echo $cart[$i]['nama_menu'] ?></span><br>
-                    <small><?php echo $cart[$i]['harga'] ?></small>
+                    <small>Rp. <?php echo $cart[$i]['harga'] ?></small>
                 </div>
                 <div class="col-md-5">
-                    <input class="float-right" style="width: 50px; text-align: center;" type="number" name="" idMenu="">
+                    <input class="float-right" style="width: 50px; text-align: center;" min="1" value="1" type="number" name="" idMenu="">
                 </div>
             </div>
         <?php } ?>
@@ -72,7 +72,7 @@ if (isset($_SESSION['cart'])) {
         <div class="row ">
             <div class="col-md-6 float-left">Total</div>
             <div class=" col-md-6 text-right">
-                <?php echo $total_bayar; ?>
+                Rp. <?php echo $total_bayar; ?>
             </div>
         </div>
         <div class="row">
