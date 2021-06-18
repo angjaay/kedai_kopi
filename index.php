@@ -90,10 +90,12 @@ if ($_SESSION['login']) {
                                 <div class="container">
                                     <div class="harga">Rp. <?php echo $data["harga"] ?></div>
                                     <div class="menu"><?php echo $data["nama_menu"] ?></div>
-                                    <img src="assets/images/ayam bakar.jpeg" alt="ayam bakar" class="image shadow-md">
+                                    <img src="<?php echo $data["gambar"] ?>" alt="ayam bakar" class="image shadow-md">
+                                    <input type="hidden" type="number" name="pembelian" value="1" min="1">
                                     <div class="overlay">
                                         <button class="btn-grad">Tambah</button>
                                     </div>
+
                                 </div>
                             </div>
                         <?php } ?>
