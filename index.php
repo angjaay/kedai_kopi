@@ -81,15 +81,14 @@ if ($_SESSION['login']) {
                         foreach ($menu->get_all() as $data) { ?>
                             <div class="col-md-4">
                                 <div class="container">
-                                    <form action="">
-                                        <div class="harga">Rp. <?php echo $data["harga"] ?></div>
-                                        <div class="menu"><?php echo $data["nama_menu"] ?></div>
-                                        <img src="assets/images/<?php echo $data['gambar'] ?>" alt="ayam bakar" class="image shadow-md">
-                                        <div class="overlay">
-                                            <input type="hidden" value="<?php echo $data['id_menu'] ?>">
-                                            <input type="submit" class="btn-grad" name="tambah" value="Tambah">
-                                        </div>
-                                    </form>
+                                    <div class="harga">Rp. <?php echo $data["harga"] ?></div>
+                                    <div class="menu"><?php echo $data["nama_menu"] ?></div>
+                                    <img src="<?php echo $data["gambar"] ?>" alt="ayam bakar" class="image shadow-md">
+                                    <input type="hidden" type="number" name="pembelian" value="1" min="1">
+                                    <div class="overlay">
+                                        <button class="btn-grad">Tambah</button>
+                                    </div>
+
                                 </div>
                             </div>
                         <?php } ?>
