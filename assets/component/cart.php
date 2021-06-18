@@ -40,7 +40,7 @@ if (!empty($_SESSION['cart'])) {
     <div class="card" style="border-radius: 15px;">
         <div class="card-header cart">
             <h4>Pesan Baru</h4>
-            <small><?php echo count($cart); ?> pesanan dalam keranjang </small>
+            <small><?php echo count($cart); ?> jenis pesanan dalam keranjang </small>
         </div>
 
 
@@ -55,11 +55,11 @@ if (!empty($_SESSION['cart'])) {
                         <a href="?index=<?= $index; ?>"><i class="bi bi-trash align-self-center" style="font-size:1.5rem; color:red !important;"></i></a>
                     </div>
                     <div class="col-md-6">
-                        <span><?php echo $cart[$i]['nama_menu'] ?></span><br>
+                        <span><b><?php echo $cart[$i]['nama_menu'] ?></b></span><br>
                         <small>Rp. <?php echo $cart[$i]['harga'] ?></small>
                     </div>
                     <div class="col-md-5">
-                        <input class="float-right" style="width: 50px; text-align: center;" value="<?php echo $cart[$i]['pembelian']; ?>" type="number" name="jumlah" min="1" max="<?php echo $cart[$i]['pembelian']; ?>">
+                        <input class="form-control float-right" style="width: 50px; text-align: center;" value="<?php echo $cart[$i]['pembelian']; ?>" type="number" name="jumlah" min="1" max="<?php echo $cart[$i]['pembelian']; ?>">
                     </div>
                 </div>
             <?php $index++;
@@ -74,26 +74,29 @@ if (!empty($_SESSION['cart'])) {
             ?>
         </div>
         <div class="card-footer">
-            <div class="row">
+            <div class="row mb-3">
                 <div class="col-md-6 pull-left">
-                    <input type="text" name="pembeli" placeholder="Atas Nama Pembeli">
+                    <input class="form-control" type="text" name="pembeli" placeholder="Atasnama Pembeli">
                 </div>
                 <div class=" col-md-6 float-right">
                     <button class="btn btn-success float-right">Ubah</button>
                 </div>
-                <div class="row ">
-                    <div class="col-md-6 float-left">Total</div>
-                    <div class=" col-md-6 text-right">
-                        Rp. <?php echo $total_bayar; ?>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <input type="submit" class="btn btn-danger btn-block" value="Bayar" name="bayar">
-                    </div>
-                </div>
-                </form>
             </div>
+            <div class="row mb-2">
+                <div class="col-md-6 float-left">
+                    <h4>Total :</h4>
+                </div>
+                <div class="col-md-6 text-right">
+                    Rp. <?php echo $total_bayar; ?>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <input type="submit" class="btn btn-danger btn-block" value="Bayar" name="bayar">
+                </div>
+            </div>
+            </form>
+
         </div>
     </div>
 <?php } else {
