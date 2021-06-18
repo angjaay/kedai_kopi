@@ -2,12 +2,12 @@
 session_start();
 include_once('../controller/UserController.php');
 include_once('../controller/MenuController.php');
+include_once('../controller/KategoriController.php');
 if ($_SESSION['login']) {
     $id = $_SESSION['id'];
     $user = new User();
-    $user1 = new User();
     $menu = new Menu();
-    $menu1 = new Menu();
+    $kategori = new Kategori();
     $kasir = $user->get_user($id);
 
     if (!$user->get_session()) {

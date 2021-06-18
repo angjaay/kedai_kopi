@@ -1,3 +1,14 @@
+<?php
+$data_kategori = $kategori->get_all();
+$data_menu = $menu->get_all();
+if (isset($_POST['submit'])) {
+    if ($menu->store()) {
+        echo "Menu berhasil ditambah";
+    } else {
+        echo "Menu gagal ditambahkan";
+    }
+}
+?>
 <div class="row">
     <!-- Column -->
     <div class="col-lg-4 col-xlg-3 col-md-12">
@@ -12,27 +23,31 @@
                 </tr>
             </thead>
             <tbody>
-                <form action="/action_page.php">
+                <form method="POST" enctype="multipart/form-data">
                     <div>
+                        <div class="form-group">
+                            <label for="nama_menu">Id Menu</label>
+                            <input type="text" class="form-control" id="id_menu" name="id_menu">
+                        </div>
                         <div class="form-group">
                             <label for="nama_menu">Nama Menu</label>
                             <input type="text" class="form-control" id="nama_menu" name="nama_menu">
                         </div>
                         <div class="form-group">
                             <label for="comment">Deskripsi Menu</label>
-                            <textarea class="form-control" rows="5" id="comment" style="height: 50px;"></textarea>
+                            <textarea name="deskripsi" class="form-control" rows="5" id="comment" style="height: 50px;"></textarea>
                         </div>
                     </div>
                     <div class="custom-control custom-switch">
-                        <input type="checkbox" class="custom-control-input" id="switch1">
+                        <input type="checkbox" name="status" value="Y" class="custom-control-input" id="switch1">
                         <label class="custom-control-label" for="switch1">Tersedia</label>
                     </div>
                     <br>Kategori
-                    <select name="makanan" class="custom-select">
-                        <option selected>Makanan</option>
-                        <option value="#">Ayam Bakar</option>
-                        <option value="#">..</option>
-                        <option value="#">..</option>
+                    <select name="kategori" class="custom-select">
+                        <option selected>Pilih Menu</option>
+                        <?php foreach ($data_kategori as $data) { ?>
+                            <option value="<?php echo $data['id_kategori'] ?>"><?php echo $data['nama_kategori'] ?></option>
+                        <?php } ?>
                     </select>
                     <br><br>
                     <div class="form-group">
@@ -40,19 +55,11 @@
                         <input type="text" class="form-control" id="harga" name="harga">
                     </div>
                     <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="customFile">
-
+                        <input name="gambar" type="file" class="custom-file-input" id="customFile">
                     </div>
-                    <script>
-                        $(".custom-file-input").on("change", function() {
-                            var fileName = $(this).val().split("\\").pop();
-                            $(this).siblings(".custom-file-label").addClass("selected")
-                                .html(fileName);
-                        });
-                    </script>
                     <br>
                     <div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <input type="submit" name="submit" value="Submit" class="btn btn-primary">
                     </div>
                 </form>
             </tbody>
@@ -76,38 +83,25 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td align="center" class="align-middle">1</td>
-                                <td align="center">
-                                    <img src="../assets/images/ayam bakar.jpeg" alt="" style="height: 100px; width: auto; border-radius: 15px;">
-                                </td>
-                                <td><b>Nama :</b> Ayam Bakar<br>
-                                    <b>Deskripsi:</b> enak dan murah <br>
-                                    <b>Harga:</b> Rp. 12.000
-                                </td>
-                                <td align="center" class="align-middle">
-                                    <button type="button" class="btn btn-success btn-block align-items-right">edit</button>
-                                    <button type="button" class="btn btn-danger btn-block">hapus</button>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td align="center" class="align-middle">2</td>
-                                <td align="center">
-                                    <img src="../assets/images/ayam bakar.jpeg" alt="" style="height: 100px; width: auto; border-radius: 15px;">
-                                </td>
-                                <td>Nama : <br>
-                                    Deskripsi: <br>
-                                    Harga:
-
-                                </td>
-                                <td align="center" class="align-middle">
-                                    <button type="button" class="btn btn-success btn-block align-items-right">edit</button>
-                                    <button type="button" class="btn btn-danger btn-block">hapus</button>
-                                </td>
-                            </tr>
-
-
+                            <?php $i = 1;
+                            foreach ($data_menu as $data) { ?>
+                                <tr>
+                                    <td align="center" class="align-middle"><?php echo $i; ?></td>
+                                    <td align="center">
+                                        <img src="../assets/images/<?php echo $data['gambar'] ?>" alt="" style="height: 100px; width: auto; border-radius: 15px;">
+                                    </td>
+                                    <td><b>Nama :</b> <?php echo $data['nama_menu'] ?> <br>
+                                        <b>Deskripsi:</b> <?php echo $data['deskripsi'] ?><br>
+                                        <b>Harga:</b> <?php echo $data['harga'] ?><br>
+                                        <b>Kategori:</b> <?php echo $data['nama_kategori'] ?><br>
+                                    </td>
+                                    <td align="center" class="align-middle">
+                                        <button type="button" class="btn btn-success btn-block align-items-right">edit</button>
+                                        <button type="button" class="btn btn-danger btn-block">hapus</button>
+                                    </td>
+                                </tr>
+                            <?php $i++;
+                            } ?>
                         </tbody>
                     </table>
                 </div>

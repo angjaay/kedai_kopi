@@ -5,7 +5,7 @@
 
                 <?php
 
-                $data_menu = $menu1->get_count();
+                $data_menu = $menu->get_count();
 
                 ?>
 
@@ -42,7 +42,7 @@
             <div class="card-body">
 
                 <?php
-                $data_kasir = $user1->get_count();
+                $data_kasir = $user->get_count();
                 ?>
 
                 <h5 class="card-title">Data Kasir</h5>

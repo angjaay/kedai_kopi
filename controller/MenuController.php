@@ -20,7 +20,8 @@ class Menu
      */
     public function get_all()
     {
-        $sql1 = "SELECT * FROM menu";
+        $sql1 = "SELECT * FROM menu
+            INNER JOIN kategori ON kategori.id_kategori = menu.id_kategori";
         $result = $this->db->query($sql1);
         $menu = $result->fetch_all(MYSQLI_ASSOC);
 
@@ -45,17 +46,27 @@ class Menu
      * @param $post
      * @return Location::/page_menu/index.php
      */
-    public function store($post)
+    public function store()
     {
-        $nama_menu = $post['nama_menu'];
-        $id_menu = $post['id_menu'];
-        $id_kategori = $post['id_kategori'];
-        $status = $post['status'];
-        $deskripsi = $post['deskripsi'];
-        $harga = $post['harga'];
-        $gambar = $post['gambar'];
+        $nama_menu = $_POST['nama_menu'];
+        $id_menu = $_POST['id_menu'];
+        $id_kategori = $_POST['kategori'];
+        $status = $_POST['status'];
+        $deskripsi = $_POST['deskripsi'];
+        $harga = $_POST['harga'];
 
-        $$sql1 = "SELECT id_menu, nama_menu FROM menu
+        // Input nama gambar
+        $nama_gambar = $_FILES['gambar']['name'];
+        $target_dir = "../assets/images/";
+
+        $target_file = $target_dir . basename($_FILES['gambar']['name']);
+
+        // Select File type
+        $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+        // Valid file extensions
+        $extensions_arr = array("jpg", "jpeg", "png", "gif");
+
+        $sql1 = "SELECT id_menu, nama_menu FROM menu
             WHERE id_menu = '$id_menu' AND nama_menu = '$nama_menu'";
 
         // Checking if the nama_menu is available
@@ -64,7 +75,10 @@ class Menu
 
         // If the nama_menu is not in db then insert it to table
         if ($count_row == 0) {
-            $sql2 = "INSERT INTO menu 
+            if (in_array($imageFileType, $extensions_arr)) {
+                // Upload file
+                if (move_uploaded_file($_FILES['gambar']['tmp_name'], $target_dir . $nama_gambar)) {
+                    $sql2 = "INSERT INTO menu 
                 VALUES(
                     '$id_menu',
                     '$id_kategori',
@@ -72,10 +86,14 @@ class Menu
                     '$deskripsi',
                     '$harga',
                     '$status',
-                    '$gambar'
+                    '$nama_gambar'
                     )";
-            $result = mysqli_query($this->db, $sql2) or die(mysqli_connect_errno() . "Data cannot inserted");
-            return $result;
+                    $result = mysqli_query($this->db, $sql2) or die(mysqli_connect_errno() . "Data cannot inserted");
+                    return header('location:../admin_page/index.php');
+                }
+            } else {
+                return false;
+            }
         } else {
             return false;
         }

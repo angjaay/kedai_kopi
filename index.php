@@ -12,6 +12,9 @@ if ($_SESSION['login']) {
         header("location:./public/login.php");
     }
 
+    if (isset($_POST['tambah'])) {
+    }
+
     if (isset($_GET['q'])) {
         $user->logout();
         header("location:./public/login.php");
@@ -74,26 +77,19 @@ if ($_SESSION['login']) {
             <div class="row">
                 <div class="col-md-8">
                     <div class="row">
-                        <div class="col-md-4">
-                            <div class="container">
-                                <div class="harga">Rp. 26.000</div>
-                                <div class="menu">Ayam Bakar</div>
-                                <img src="assets/images/ayam bakar.jpeg" alt="ayam bakar" class="image shadow-md">
-                                <div class="overlay">
-                                    <button class="btn-grad">Tambah</button>
-                                </div>
-                            </div>
-                        </div>
                         <?php
                         foreach ($menu->get_all() as $data) { ?>
                             <div class="col-md-4">
                                 <div class="container">
-                                    <div class="harga">Rp. <?php echo $data["harga"] ?></div>
-                                    <div class="menu"><?php echo $data["nama_menu"] ?></div>
-                                    <img src="assets/images/ayam bakar.jpeg" alt="ayam bakar" class="image shadow-md">
-                                    <div class="overlay">
-                                        <button class="btn-grad">Tambah</button>
-                                    </div>
+                                    <form action="">
+                                        <div class="harga">Rp. <?php echo $data["harga"] ?></div>
+                                        <div class="menu"><?php echo $data["nama_menu"] ?></div>
+                                        <img src="assets/images/<?php echo $data['gambar'] ?>" alt="ayam bakar" class="image shadow-md">
+                                        <div class="overlay">
+                                            <input type="hidden" value="<?php echo $data['id_menu'] ?>">
+                                            <input type="submit" class="btn-grad" name="tambah" value="Tambah">
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         <?php } ?>
