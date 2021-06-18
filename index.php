@@ -2,17 +2,19 @@
 session_start();
 include_once('./controller/UserController.php');
 include_once('./controller/MenuController.php');
+include_once('./controller/TransaksiController.php');
+include_once('./controller/DetailTransaksiController.php');
 if ($_SESSION['login']) {
     $id = $_SESSION['id'];
     $user = new User();
     $menu = new Menu();
+    $transaksi = new Transaksi();
+    $detail_transaksi = new DetailTransaksi();
+
     $kasir = $user->get_user($id);
 
     if (!$user->get_session()) {
         header("location:./public/login.php");
-    }
-
-    if (isset($_POST['tambah'])) {
     }
 
     if (isset($_GET['q'])) {
@@ -22,6 +24,35 @@ if ($_SESSION['login']) {
 
     if (isset($_GET['index'])) {
         header('Location: index.php');
+    }
+
+    if (isset($_POST['bayar'])) {
+        $cart = unserialize(serialize($_SESSION['cart']));
+        $total_item = 0;
+        $total_bayar = 0;
+        $date = date('Y-m-d');
+        $pembeli = $_POST['pembeli'];
+        $id_kasir = $_SESSION['id'];
+        for ($i = 0; $i < count($cart); $i++) {
+            $total_item += $cart[$i]['pembelian'];
+            $total_bayar += $cart[$i]['pembelian'] * $cart[$i]['harga'];
+        }
+        $data_transaksi = $transaksi->store($date, $total_bayar, $pembeli, $id_kasir);
+        if ($data_transaksi) {
+            $sql = "SELECT no_struk FROM `transaksi` ORDER BY `no_struk` DESC LIMIT 1";
+            $query = $transaksi->db->query($sql);
+            $dataQuery = $query->fetch_assoc();
+            for ($i = 0; $i < count($cart); $i++) {
+                $id_menu = $cart[$i]['id_menu'];
+                $pembelian = $cart[$i]['pembelian'];
+                $no_struk = $dataQuery['no_struk'];
+                $subtotal = $pembelian * $cart[$i]['harga'];
+                $data_transaksi = $detail_transaksi->store($no_struk, $id_menu, $pembelian, $subtotal);
+            }
+            echo "Berhasil";
+        } else {
+            echo "Gagal";
+        }
     }
 } else {
     header("location:./public/login.php");

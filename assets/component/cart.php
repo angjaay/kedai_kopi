@@ -81,17 +81,18 @@ if (!empty($_SESSION['cart'])) {
                 <div class=" col-md-6 float-right">
                     <button class="btn btn-success float-right">Ubah</button>
                 </div>
-            </div>
-            <div class="row ">
-                <div class="col-md-6 float-left">Total</div>
-                <div class=" col-md-6 text-right">
-                    Rp. <?php echo $total_bayar; ?>
+                <div class="row ">
+                    <div class="col-md-6 float-left">Total</div>
+                    <div class=" col-md-6 text-right">
+                        Rp. <?php echo $total_bayar; ?>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <input type="submit" value="Bayar Pesanan" name="bayar" class="btn btn-danger btn-block">
+                <div class="row">
+                    <div class="col-md-12">
+                        <input type="submit" class="btn btn-danger btn-block" value="Bayar" name="bayar">
+                    </div>
                 </div>
+                </form>
             </div>
         </div>
     </div>
