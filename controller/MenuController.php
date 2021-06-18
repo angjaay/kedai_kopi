@@ -98,4 +98,18 @@ class Menu
             return false;
         }
     }
+
+    /**
+     * @param $id
+     * 
+     * @return $menu
+     */
+    public function view($id)
+    {
+        $sql1 = "SELECT * FROM menu WHERE id_menu = '$id'";
+        $result = $this->db->query($sql1);
+        $menu = $result->fetch_assoc();
+
+        return $menu;
+    }
 }
