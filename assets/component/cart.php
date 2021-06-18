@@ -38,8 +38,8 @@ if (isset($_SESSION['cart'])) {
 ?>
 <div class="card" style="border-radius: 15px;">
     <div class="card-header cart">
-        <h4><?php echo $no; ?> Pesan Baru</h4>
-        <small></small>
+        <h4> Pesanan Baru</h4>
+        <small><?php echo $no; ?> barang di keranjang</small>
     </div>
 
 
