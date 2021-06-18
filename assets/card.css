@@ -56,8 +56,9 @@
   }
   
 
-  .btn-grad {background-image: linear-gradient(to right, #11998e 0%, #38ef7d  51%, #11998e  100%)}
+  .btn-grad {background-color: rgba(56,239,125,1);}
   .btn-grad {
+    left: 10px;
      margin: 5px;
      padding: 10px 30px;
      text-align: center;
