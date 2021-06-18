@@ -20,20 +20,20 @@
 
         </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-4 text-center">
         <div class="card" style="width: 18rem;">
             <div class="card-body">
 
                 <?php
-                // $data_transaksi = $transaksi->get_count();
+                $data_transaksi = $trans->get_count();
                 ?>
 
                 <h5 class="card-title">Data Transaksi</h5>
                 <p class="card-text">Jumlah Transaksi saat ini</p>
                 <h3><?php
-                    // echo $transaksi['jmlTrans']; 
+                    echo $data_transaksi['jmlTrans'];
                     ?></h3>
-                <a href="data-barang.php" class="card-link">Lihat Data Transaksi</a>
+                <a href="index.php?p=transaksi" class="card-link">Lihat Data Transaksi</a>
             </div>
         </div>
     </div>

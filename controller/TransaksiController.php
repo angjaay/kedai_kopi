@@ -12,6 +12,17 @@ class Transaksi
             exit;
         }
     }
+    // Get count menu from database
+    // @return $menu1[]
+
+
+    public function get_count()
+    {
+        $sql2 = "SELECT COUNT(*) as jmlTrans FROM transaksi";
+        $result = $this->db->query($sql2);
+        $trans = $result->fetch_assoc();
+        return $trans;
+    }
 
     public function store($tggl, $total, $pembeli, $id_kasir)
     {

@@ -2,6 +2,7 @@
 session_start();
 include_once('../controller/UserController.php');
 include_once('../controller/MenuController.php');
+include_once('../controller/TransaksiController.php');
 include_once('../controller/KategoriController.php');
 if ($_SESSION['login']) {
     $id = $_SESSION['id'];
@@ -9,6 +10,7 @@ if ($_SESSION['login']) {
     $menu = new Menu();
     $kategori = new Kategori();
     $kasir = $user->get_user($id);
+    $trans = new Transaksi();
 
     if (!$user->get_session()) {
         header("location:../public/login.php");

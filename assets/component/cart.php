@@ -78,7 +78,7 @@ if (!empty($_SESSION['cart'])) {
                 <div class="row mb-3">
 
                     <div class="col-md-6 pull-left">
-                        <input class="form-control" type="text" name="pembeli" placeholder="Atasnama Pembeli">
+                        <input class="form-control" type="text" name="pembeli" placeholder="Atasnama Pembeli" required>
                     </div>
                     <div class=" col-md-6 float-right">
                         <button class="btn btn-success float-right">Ubah</button>
