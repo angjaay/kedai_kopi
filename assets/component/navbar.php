@@ -37,7 +37,7 @@ if (isset($_SESSION['id'])) {
                             </div>
                         </li>
 
-                        <li class="nav-item"><button class="btn btn-success">
+                        <li class="nav-item"><button class="btn btn-success item_count">
                                 <span class="bi-cart-fill"></span>
                                 <span>0</span>
                             </button>
