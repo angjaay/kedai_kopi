@@ -74,27 +74,29 @@ if (!empty($_SESSION['cart'])) {
             ?>
         </div>
         <div class="card-footer">
-            <div class="row mb-3">
-                <div class="col-md-6 pull-left">
-                    <input class="form-control" type="text" name="pembeli" placeholder="Atasnama Pembeli">
+            <form action="" method="POST">
+                <div class="row mb-3">
+
+                    <div class="col-md-6 pull-left">
+                        <input class="form-control" type="text" name="pembeli" placeholder="Atasnama Pembeli">
+                    </div>
+                    <div class=" col-md-6 float-right">
+                        <button class="btn btn-success float-right">Ubah</button>
+                    </div>
                 </div>
-                <div class=" col-md-6 float-right">
-                    <button class="btn btn-success float-right">Ubah</button>
+                <div class="row mb-2">
+                    <div class="col-md-6 float-left">
+                        <h4>Total :</h4>
+                    </div>
+                    <div class="col-md-6 text-right">
+                        Rp. <?php echo $total_bayar; ?>
+                    </div>
                 </div>
-            </div>
-            <div class="row mb-2">
-                <div class="col-md-6 float-left">
-                    <h4>Total :</h4>
+                <div class="row">
+                    <div class="col-md-12">
+                        <input type="submit" class="btn btn-danger btn-block" value="Bayar" name="bayar">
+                    </div>
                 </div>
-                <div class="col-md-6 text-right">
-                    Rp. <?php echo $total_bayar; ?>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <input type="submit" class="btn btn-danger btn-block" value="Bayar" name="bayar">
-                </div>
-            </div>
             </form>
 
         </div>
