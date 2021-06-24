@@ -65,6 +65,7 @@ class User
             session_start();
             $_SESSION['login'] = true;
             $_SESSION['id'] = $user_data['id_kasir'];
+            $_SESSION['login_time_stamp'] = time();
             return true;
         } else {
             return false;

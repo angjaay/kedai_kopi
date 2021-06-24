@@ -13,6 +13,23 @@ class DetailTransaksi
         }
     }
 
+    public function view($no_struk)
+    {
+        $sql = "SELECT * FROM detail_transaksi
+            INNER JOIN transaksi ON transaksi.no_struk = detail_transaksi.no_struk
+            INNER JOIN menu ON menu.id_menu = detail_transaksi.id_menu
+            WHERE detail_transaksi.no_struk = $no_struk
+        ";
+        $result = $this->db->query($sql);
+        if ($result->num_rows > 0) {
+            $data = array();
+            while ($row = $result->fetch_assoc()) {
+                $data[] = $row;
+            }
+            return $data;
+        }
+    }
+
     public function store($no_struk, $id_menu, $jumlah, $harga)
     {
         $sql1 = "INSERT INTO detail_transaksi VALUE(

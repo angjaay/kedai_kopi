@@ -5,6 +5,11 @@ include_once('./controller/MenuController.php');
 include_once('./controller/TransaksiController.php');
 include_once('./controller/DetailTransaksiController.php');
 if ($_SESSION['login']) {
+    if (time() - $_SESSION["login_time_stamp"] > 600) {
+        session_unset();
+        session_destroy();
+        header("Location:public/login.php");
+    }
     $id = $_SESSION['id'];
     $user = new User();
     $menu = new Menu();
@@ -147,21 +152,12 @@ if ($_SESSION['login']) {
                     </div>
                 </div>
                 <div class="col-md-4">
-
                     <?php include 'assets/component/cart.php' ?>
                 </div>
-
-
-
             </div>
         </div>
     </div>
-
-
-
     </div>
-
 </body>
-
 
 </html>

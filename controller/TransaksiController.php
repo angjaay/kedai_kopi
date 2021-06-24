@@ -12,10 +12,24 @@ class Transaksi
             exit;
         }
     }
+
+    /**
+     * Get all transaksi from database
+     * 
+     * @return $data[]
+     */
+    public function index()
+    {
+        $sql = "SELECT * FROM transaksi
+        INNER JOIN kasir ON transaksi.id_kasir = kasir.id_kasir";
+        $query = $this->db->query($sql);
+        $transaksi = $query->fetch_all(MYSQLI_ASSOC);
+
+        return $transaksi;
+    }
+
     // Get count menu from database
     // @return $menu1[]
-
-
     public function get_count()
     {
         $sql2 = "SELECT COUNT(*) as jmlTrans FROM transaksi";

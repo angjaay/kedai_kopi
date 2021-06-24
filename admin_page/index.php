@@ -3,14 +3,22 @@ session_start();
 include_once('../controller/UserController.php');
 include_once('../controller/MenuController.php');
 include_once('../controller/TransaksiController.php');
+include_once('../controller/DetailTransaksiController.php');
 include_once('../controller/KategoriController.php');
 if ($_SESSION['login']) {
+    if (time() - $_SESSION["login_time_stamp"] > 600) {
+        session_unset();
+        session_destroy();
+        header("Location:../index.php");
+    }
+
     $id = $_SESSION['id'];
     $user = new User();
     $menu = new Menu();
     $kategori = new Kategori();
     $kasir = $user->get_user($id);
     $trans = new Transaksi();
+    $detail_transaksi = new DetailTransaksi();
 
     if (!$user->get_session()) {
         header("location:../public/login.php");
