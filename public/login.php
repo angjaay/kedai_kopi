@@ -48,10 +48,18 @@ if (isset($_POST['submit'])) {
     <div class="login-dark">
         <form method="post" action="login.php" name="login">
             <h2 class="sr-only">Login Form</h2>
-            <div class="illustration"><img src="../assets/images/login.svg" alt="login"></div>
-            <div class="form-group"><input class="form-control" type="text" name="id" placeholder="Username" required></div>
-            <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password"></div>
-            <div class="form-group"><input class="btn btn-primary btn-block" onclick="return(submitlogin());" type="submit" name="submit" value="Login"></div><a href="registration.php" class="forgot">Register new user</a>
+            <div class="illustration">
+                <img src="../assets/images/login.svg" alt="login">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" name="id" placeholder="Username" required>
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="password" name="password" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <input class="btn btn-primary btn-block" onclick="return(submitlogin());" type="submit" name="submit" value="Login">
+            </div><a href="registration.php" class="forgot">Register new user</a>
         </form>
     </div>
 
