@@ -92,12 +92,12 @@ if (isset($_POST['submit'])) {
                                     </td>
                                     <td><b>Nama :</b> <?php echo $data['nama_menu'] ?> <br>
                                         <b>Deskripsi:</b> <?php echo $data['deskripsi'] ?><br>
-                                        <b>Harga:</b> <?php echo $data['harga'] ?><br>
+                                        <b>Harga:</b> Rp.<?php echo $data['harga'] ?>,-<br>
                                         <b>Kategori:</b> <?php echo $data['nama_kategori'] ?><br>
                                     </td>
-                                    <td align="center" class="align-middle">
-                                        <button type="button" class="btn btn-success btn-block align-items-right">edit</button>
-                                        <button type="button" class="btn btn-danger btn-block">hapus</button>
+                                    <td align="center" class="align-middle text-light">
+                                        <button type="button" class="btn btn-success btn-block align-items-right text-white">edit</button>
+                                        <button type="button" class="btn btn-danger btn-block text-white">hapus</button>
                                     </td>
                                 </tr>
                             <?php $i++;
