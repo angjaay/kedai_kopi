@@ -47,7 +47,7 @@ $data_trans = $trans->index();
                                         <?php  } ?>
                                     </td>
                                     <td align="center" class="align-middle">
-                                        <a href="page/detail_transaksi.php?d=<?php echo $data['no_struk'] ?>">
+                                        <a href="#">
                                             <button type="button" class="btn btn-info btn-block align-items-right text-white">View Order</button>
                                         </a>
                                     </td>
