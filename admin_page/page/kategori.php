@@ -85,9 +85,11 @@ if (isset($_POST['submit'])) {
                             foreach ($data_kategori as $data) { ?>
                                 <tr>
                                     <td align="center" class="align-middle"><?php echo $i; ?></td>
+                                    <td><?php echo $data['id_kategori'] ?> <br></td>
                                     <td><b></b>
                                         <?php echo $data['nama_kategori'] ?> <br>
                                     </td>
+                                    
                                     <td align="center" class="align-middle">
                                         <a href="edit_kategori.php?e=<?php echo $data['id_kategori'] ?>">
                                             <button type="button" class="btn btn-success btn-block align-items-right text-white">Edit</button>
