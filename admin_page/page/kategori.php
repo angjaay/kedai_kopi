@@ -18,7 +18,7 @@ if (isset($_POST['submit'])) {
                 <tr>
                     <th>
                         <center>
-                            <h3>Category Form</h3>
+                            <h3> Form Kategori</h3>
                         </center>
                     </th>
                 </tr>
@@ -62,7 +62,7 @@ if (isset($_POST['submit'])) {
                             </div>
                             <!-?php
                         }
-                    } ?--> 
+                    } ?-->
         </div>
     </div>
     <!-- Column -->
@@ -75,8 +75,8 @@ if (isset($_POST['submit'])) {
                         <thead>
                             <tr align="center">
                                 <th class="border-top-0" style="width: 5%;">No</th>
-                                <th class="border-top-0" style="width: 10%;">Id Category</th>
-                                <th class="border-top-0" style="width: 40%;">Category Name</th>
+                                <th class="border-top-0" style="width: 10%;">Id Kategori</th>
+                                <th class="border-top-0" style="width: 40%;">Nama Kategori</th>
                                 <th class="border-top-0" style="width: 15%;">Action</th>
                             </tr>
                         </thead>
@@ -85,8 +85,8 @@ if (isset($_POST['submit'])) {
                             foreach ($data_kategori as $data) { ?>
                                 <tr>
                                     <td align="center" class="align-middle"><?php echo $i; ?></td>
-                                    <td><?php echo $data['id_kategori'] ?> <br></td>
-                                    <td><b></b>
+                                    <td align="center" class="align-middle"><?php echo $data['id_kategori'] ?></td>
+                                    <td align="center" class="align-middle">
                                         <?php echo $data['nama_kategori'] ?> <br>
                                     </td>
                                     
