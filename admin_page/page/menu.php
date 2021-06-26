@@ -78,7 +78,7 @@ if (isset($_POST['submit'])) {
                                 <th class="border-top-0" style="width: 10%;">No</th>
                                 <th class="border-top-0" style="width: 20%;">Gambar</th>
                                 <th class="border-top-0">Deskripsi</th>
-                                <th class="border-top-0" style="width:24%;">Aksi</th>
+                                <th class="border-top-0" style="width:24%;">Action</th>
 
                             </tr>
                         </thead>
