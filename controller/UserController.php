@@ -85,6 +85,18 @@ class User
     }
 
     /**
+     * get all user 
+     */
+    public function get_all()
+    {
+        $sql5 = "SELECT * FROM kasir";
+        $result = $this->db->query($sql5);
+        $kasir = $result->fetch_all(MYSQLI_ASSOC);
+
+        return $kasir;
+    }
+
+    /**
      * Start the session
      */
     public function get_session()
