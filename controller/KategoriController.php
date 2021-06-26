@@ -36,29 +36,4 @@ class Kategori
         $kategori = $result->fetch_all(MYSQLI_ASSOC);
         return $kategori;
     }
-
-    public function store()
-    {
-        $id_kategori   = $_POST['id_kategori'];
-        $nama_kategori = $_POST['nama_kategori'];
-
-        $check = $this->db->query($sql);
-        $count_row = $check->num_rows;
-        
-        ?><!--
-        if ($count_row == 0) {
-            $sql = "INSERT INTO kategori
-                    VALUES(
-                    '$id_kategori',
-                    '$nama_kategori'
-                    )";
-            $result = mysqli_query($this->db, $sql) or die(mysqli_connect_errno() . "Data cannot inserted");
-            return header('location:../admin_page/index.php');
-            } else {
-                return false;
-            }else {
-            return false;
-        }
-        --><?php
-    }
 }
