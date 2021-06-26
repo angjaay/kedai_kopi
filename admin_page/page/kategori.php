@@ -1,5 +1,14 @@
 <?php
 $data_kategori = $kategori->get_all();
+if (isset($_POST['submit'])) {
+    $id_kat = $_POST['id_kategori'];
+    $nama_kat = $_POST['nama_kategori'];
+    if ($kategori->store($id_kat, $nama_kat)) {
+        echo "Menu berhasil ditambah";
+    } else {
+        echo "Menu gagal ditambahkan";
+    }
+}
 ?>
 <div class="row">
     <!-- Column -->
@@ -18,16 +27,17 @@ $data_kategori = $kategori->get_all();
                 <form method="POST" enctype="multipart/form-data">
                     <div>
                         <div class="form-group">
-                            <label for="id_kategori">Id Category</label>
+                            <label for="id_kategori">ID Kategori</label>
                             <input type="text" class="form-control" id="id_kategori" name="id_kategori">
-                            <br>
-                            <label for="nama_kategori">Category</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="nama_kategori">Nama Kategori</label>
                             <input type="text" class="form-control" id="nama_kategori" name="nama_kategori">
                         </div>
-                    <div>
-                        <input type="submit" name="submit" value="Submit" class="btn btn-primary">
-                        <input type="reset" name="cancel" value="Cancel" class="btn btn-light">
-                    </div>
+                        <div>
+                            <input type="submit" name="submit" value="submit" class="btn btn-primary">
+                            <input type="reset" name="cancel" value="cancel" class="btn btn-light">
+                        </div>
                     </div>
                 </form>
             </tbody>
@@ -75,11 +85,16 @@ $data_kategori = $kategori->get_all();
                             foreach ($data_kategori as $data) { ?>
                                 <tr>
                                     <td align="center" class="align-middle"><?php echo $i; ?></td>
-                                    <td align="center" class="align-middle"><?php echo $data['id_kategori']; ?></td>
-                                    <td class="align-middle"><?php echo $data['nama_kategori']; ?></td>
+                                    <td><b></b>
+                                        <?php echo $data['nama_kategori'] ?> <br>
+                                    </td>
                                     <td align="center" class="align-middle">
-                                        <button type="button" class="btn btn-success btn-block align-items-right text-white">edit</button>
-                                        <button type="button" class="btn btn-danger btn-block text-white">delete</button>
+                                        <a href="edit_kategori.php?e=<?php echo $data['id_kategori'] ?>">
+                                            <button type="button" class="btn btn-success btn-block align-items-right text-white">Edit</button>
+                                        </a>
+                                        <a href="delete_kategori.php?d=<?php echo $data['id_kategori'] ?>">
+                                            <button type="button" class="btn btn-danger btn-block text-white">Delete</button>
+                                        </a>
                                     </td>
                                 </tr>
                             <?php $i++;

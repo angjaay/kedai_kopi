@@ -1,13 +1,5 @@
 <?php
-$data_kategori = $kategori->get_all();
-$data_menu = $menu->get_all();
-if (isset($_POST['submit'])) {
-    if ($menu->store()) {
-        echo "Menu berhasil ditambah";
-    } else {
-        echo "Menu gagal ditambahkan";
-    }
-}
+$data_trans = $trans->index();
 ?>
 <div class="row">
     <!-- Column -->
@@ -19,32 +11,45 @@ if (isset($_POST['submit'])) {
                     <table class="table table-bordered">
                         <thead>
                             <tr align="center">
-                                <th class="border-top-0" style="width: 5%;">No</th>
-                                <th class="border-top-0" style="width: 20%;">Nama</th>
-                                <th class="border-top-0" >Address</th>
-                                <th class="border-top-0" >E-mail</th>
-                                <th class="border-top-0">Mobile</th>
+                                <th class="border-top-0" style="width: 5%;">No Struk</th>
+                                <th class="border-top-0" style="width: 20%;">Tanggal Pembelian</th>
+                                <th class="border-top-0">Total</th>
+                                <th class="border-top-0">Pembeli</th>
+                                <th class="border-top-0">Kasir</th>
                                 <th class="border-top-0" style="width:10%;">Status</th>
                                 <th class="border-top-0" style="width:15%;">Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php $i = 1;
-                            foreach ($data_menu as $data) { ?>
+                            foreach ($data_trans as $data) { ?>
                                 <tr>
-                                    <td align="center" class="align-middle"><?php echo $i; ?></td>
-                                    <td><b></b><!--?php echo $data['nama_pelanggan'] ?--></td>
-                                    <td><b></b><!--?php echo $data['address'] ?--></td>
-                                    <td><b></b><!--?php echo $data['email'] ?--></td>
-                                    <td><b></b><!--?php echo $data['mobile'] ?--></td>
-                                    <!--
-                                    fungsi if
-                                    -->
-                                    <td align="center" class="align-middle">
-                                        <button type="button" class="btn btn-success btn-sm align-items-right text-white" readonly>Confirmed</button>
+                                    <td><b></b>
+                                        <?php echo $data['no_struk'] ?>
+                                    </td>
+                                    <td><b></b>
+                                        <?php echo $data['tgl'] ?>
+                                    </td>
+                                    <td><b></b>
+                                        <?php echo $data['total'] ?>
+                                    </td>
+                                    <td><b></b>
+                                        <?php echo $data['pembeli'] ?>
+                                    </td>
+                                    <td><b></b>
+                                        <?php echo $data['nama_kasir'] ?>
                                     </td>
                                     <td align="center" class="align-middle">
-                                        <button type="button" class="btn btn-info btn-block align-items-right text-white">View Order</button>
+                                        <?php if ($data['status'] == 'Y') { ?>
+                                            <button type="button" class="btn btn-success btn-sm align-items-right text-white" readonly>Confirmed</button>
+                                        <?php } else { ?>
+                                            <button type="button" class="btn btn-danger btn-sm align-items-right text-white" readonly>Not Confirmed</button>
+                                        <?php  } ?>
+                                    </td>
+                                    <td align="center" class="align-middle">
+                                        <a href="#">
+                                            <button type="button" class="btn btn-info btn-block align-items-right text-white">View Order</button>
+                                        </a>
                                     </td>
                                 </tr>
                             <?php $i++;

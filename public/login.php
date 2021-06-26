@@ -24,6 +24,7 @@ if (isset($_POST['submit'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Dashboard Admin</title>
+    <link rel="icon" type="image/png" sizes="19x16" href="../assets/images/favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="../assets/login.css">
@@ -48,10 +49,18 @@ if (isset($_POST['submit'])) {
     <div class="login-dark">
         <form method="post" action="login.php" name="login">
             <h2 class="sr-only">Login Form</h2>
-            <div class="illustration"><img src="../assets/images/login.svg" alt="login"></div>
-            <div class="form-group"><input class="form-control" type="text" name="id" placeholder="Username" required></div>
-            <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password"></div>
-            <div class="form-group"><input class="btn btn-primary btn-block" onclick="return(submitlogin());" type="submit" name="submit" value="Login"></div><a href="registration.php" class="forgot">Register new user</a>
+            <div class="illustration">
+                <img src="../assets/images/login.svg" alt="login">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" name="id" placeholder="Username" required>
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="password" name="password" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <input class="btn btn-primary btn-block" onclick="return(submitlogin());" type="submit" name="submit" value="Login">
+            </div><a href="registration.php" class="forgot">Register new user</a>
         </form>
     </div>
 
