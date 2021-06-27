@@ -50,8 +50,12 @@ if ($_SESSION['login']) {
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="19x16" href="plugins/images/favicon copy.png">
     <link rel="shortcut icon" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" type="image/x-icon">
+    <!-- sweetalert2 -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="sweetalert2.min.css">
     <!-- Custom CSS -->
     <link href="css/style.min.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -239,16 +243,42 @@ if ($_SESSION['login']) {
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
+    <script>
+        function validate() {
+            event.preventDefault();
+            Swal.fire({
+                title: 'Yakin ingin menghapus?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Ya, hapus!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire(
+                        'Berhasil!',
+                        'Data telah dihapus.',
+                        'success'
+                    )
+                }
+            })
+        }
+    </script>
+
     <script src="plugins/bower_components/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
     <script src="bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/app-style-switcher.js"></script>
+    <script src="sweetalert2.min.js"></script>
     <!--Wave Effects -->
     <script src="js/waves.js"></script>
     <!--Menu sidebar -->
     <script src="js/sidebarmenu.js"></script>
     <!--Custom JavaScript -->
     <script src="js/custom.js"></script>
+
+
 </body>
 
 </html>

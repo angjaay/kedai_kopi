@@ -89,13 +89,13 @@ if (isset($_POST['submit'])) {
                                     <td align="center" class="align-middle">
                                         <?php echo $data['nama_kategori'] ?> <br>
                                     </td>
-                                    
+
                                     <td align="center" class="align-middle">
                                         <a href="edit_kategori.php?e=<?php echo $data['id_kategori'] ?>">
                                             <button type="button" class="btn btn-success btn-block align-items-right text-white">Edit</button>
                                         </a>
                                         <a href="delete_kategori.php?d=<?php echo $data['id_kategori'] ?>">
-                                            <button type="button" class="btn btn-danger btn-block text-white">Delete</button>
+                                            <button type="button" class="btn btn-danger btn-block text-white" onclick="validate()">Delete</button>
                                         </a>
                                     </td>
                                 </tr>

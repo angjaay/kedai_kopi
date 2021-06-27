@@ -47,9 +47,9 @@ $data_trans = $trans->index();
                                         <?php  } ?>
                                     </td>
                                     <td align="center" class="align-middle">
-                                        <a href="#">
-                                            <button type="button" class="btn btn-info btn-block align-items-right text-white">View Order</button>
-                                        </a>
+
+                                        <button type="button" class="btn btn-info btn-block align-items-right text-white view_order" data-id="<?php echo $data['no_struk'] ?>">View Order</button>
+
                                     </td>
                                 </tr>
                             <?php $i++;
@@ -62,4 +62,9 @@ $data_trans = $trans->index();
     </div>
     <!-- Column -->
 </div>
+<script>
+    $('.view_order').click(function() {
+        uni_modal('Transaksi', 'view_order.php?id=' + $(this).attr('data-id'))
+    })
+</script>
 <!-- Row -->

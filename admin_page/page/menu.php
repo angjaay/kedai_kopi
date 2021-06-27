@@ -97,7 +97,7 @@ if (isset($_POST['submit'])) {
                                     </td>
                                     <td align="center" class="align-middle text-light">
                                         <button type="button" class="btn btn-success btn-block align-items-right text-white">edit</button>
-                                        <button type="button" class="btn btn-danger btn-block text-white">hapus</button>
+                                        <button type="button" class="btn btn-danger btn-block text-white" onclick="validate()">hapus</button>
                                     </td>
                                 </tr>
                             <?php $i++;
