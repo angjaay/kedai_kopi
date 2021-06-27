@@ -17,7 +17,7 @@ if (isset($_POST['submit'])) {
                 <tr>
                     <th>
                         <center>
-                            <h3>Form Menu</h3>
+                            <h3>Form Edit Menu</h3>
                         </center>
                     </th>
                 </tr>
@@ -59,7 +59,7 @@ if (isset($_POST['submit'])) {
                     </div>
                     <br>
                     <div>
-                        <input type="submit" name="submit" value="Tambah menu" class="btn btn-primary">
+                        <input type="submit" name="submit" value="Ubah menu" class="btn btn-primary">
                     </div>
                 </form>
             </tbody>

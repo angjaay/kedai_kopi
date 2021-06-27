@@ -214,9 +214,13 @@ if ($_SESSION['login']) {
                     require_once 'page/' . $_GET['p'] . '.php';
                 } else if ($_GET['p'] == 'menu') {
                     require_once 'page/' . $_GET['p'] . '.php';
+                } else if ($_GET['p'] == 'edit_menu') {
+                    require_once 'page/' . $_GET['p'] . '.php';
                 } else if ($_GET['p'] == 'transaksi') {
                     require_once 'page/' . $_GET['p'] . '.php';
                 } else if ($_GET['p'] == 'kategori') {
+                    require_once 'page/' . $_GET['p'] . '.php';
+                } else if ($_GET['p'] == 'edit_kategori') {
                     require_once 'page/' . $_GET['p'] . '.php';
                 } else if ($_GET['p'] == 'user') {
                     require_once 'page/' . $_GET['p'] . '.php';
