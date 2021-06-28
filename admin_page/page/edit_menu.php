@@ -57,6 +57,11 @@ if (isset($_POST['submit'])) {
                     <div class="custom-file">
                         <input name="gambar" type="file" class="custom-file-input" id="customFile">
                     </div>
+                    <div class="form-group">
+                        <img src="../assets/images/" alt="" style="height: 100px; width: auto; border-radius: 15px;">
+                        <small>nama gambar</small>
+                    </div>
+
                     <br>
                     <div>
                         <input type="submit" name="submit" value="Ubah menu" class="btn btn-primary">
