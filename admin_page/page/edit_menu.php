@@ -3,9 +3,42 @@ $data_menu = $menu->view($id_for_edit);
 if (isset($_POST['edit'])) {
 
     if ($menu->update($id_for_edit)) {
-        echo "Menu berhasil diedit";
+        echo "<script>
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-right',
+            iconColor: 'white',
+            customClass: {
+                popup: 'colored-toast'
+            },
+            showConfirmButton: false,
+            timer: 1500,
+            timerProgressBar: true
+        })
+
+        Toast.fire({
+            icon: 'success',
+            title: 'Edit Berhasil!'
+        })</script>";
     } else {
-        echo "Menu gagal diedit";
+        echo "<script>    
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-right',
+            iconColor: 'white',
+            customClass: {
+                popup: 'colored-toast'
+            },
+            showConfirmButton: false,
+            timer: 1500,
+            timerProgressBar: true
+        })
+   
+            Toast.fire({
+                icon: 'error',
+                title: 'Edit Gagal!'
+            })
+        </script>";
     }
 }
 ?>

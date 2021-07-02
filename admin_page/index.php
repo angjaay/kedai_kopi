@@ -63,6 +63,28 @@ if ($_SESSION['login']) {
     <!-- Custom CSS -->
     <link href="css/style.min.css" rel="stylesheet">
 
+    <style>
+        .colored-toast.swal2-icon-success {
+            background-color: #a5dc86 !important;
+        }
+
+        .colored-toast.swal2-icon-error {
+            background-color: #f27474 !important;
+        }
+
+        .colored-toast .swal2-title {
+            color: white;
+        }
+
+        .colored-toast .swal2-close {
+            color: white;
+        }
+
+        .colored-toast .swal2-content {
+            color: white;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -212,7 +234,33 @@ if ($_SESSION['login']) {
                 <!-- ============================================================== -->
 
                 <!-- Row -->
+                <script>
+                    const Toast = Swal.mixin({
+                        toast: true,
+                        position: 'top-right',
+                        iconColor: 'white',
+                        customClass: {
+                            popup: 'colored-toast'
+                        },
+                        showConfirmButton: false,
+                        timer: 1500,
+                        timerProgressBar: true
+                    })
 
+                    function success() {
+                        await Toast.fire({
+                            icon: 'success',
+                            title: 'Sukses'
+                        })
+                    }
+
+                    function failed() {
+                        await Toast.fire({
+                            icon: 'error',
+                            title: 'Gagal'
+                        })
+                    }
+                </script>
                 <?php
                 // fungsi page
                 if (!isset($_GET['p'])) {

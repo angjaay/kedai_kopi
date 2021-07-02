@@ -1,10 +1,66 @@
+<script>
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-right',
+        iconColor: 'white',
+        customClass: {
+            popup: 'colored-toast'
+        },
+        showConfirmButton: false,
+        timer: 1500,
+        timerProgressBar: true
+    })
+
+
+
+    function failed() {
+        await Toast.fire({
+            icon: 'error',
+            title: 'Gagal'
+        })
+    }
+</script>
+
 <?php
 $data_kategori = $kategori->view($id_for_edit);
 if (isset($_POST['edit'])) {
     if ($kategori->update($id_for_edit)) {
-        echo "Kategori telah diupdate!";
+        echo "<script>
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-right',
+            iconColor: 'white',
+            customClass: {
+                popup: 'colored-toast'
+            },
+            showConfirmButton: false,
+            timer: 1500,
+            timerProgressBar: true
+        })
+
+        Toast.fire({
+            icon: 'success',
+            title: 'Edit Berhasil!'
+        })</script>";
     } else {
-        echo "Kategori gagal diupdate!";
+        echo "<script>    
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-right',
+            iconColor: 'white',
+            customClass: {
+                popup: 'colored-toast'
+            },
+            showConfirmButton: false,
+            timer: 1500,
+            timerProgressBar: true
+        })
+   
+            Toast.fire({
+                icon: 'error',
+                title: 'Edit Gagal!'
+            })
+        </script>";
     }
 }
 ?>

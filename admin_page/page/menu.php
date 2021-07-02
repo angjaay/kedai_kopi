@@ -3,9 +3,42 @@ $data_kategori = $kategori->get_all();
 $data_menu = $menu->get_all();
 if (isset($_POST['submit'])) {
     if ($menu->store()) {
-        echo "Menu berhasil ditambah";
+        echo "<script>
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-right',
+            iconColor: 'white',
+            customClass: {
+                popup: 'colored-toast'
+            },
+            showConfirmButton: false,
+            timer: 1500,
+            timerProgressBar: true
+        })
+
+        Toast.fire({
+            icon: 'success',
+            title: 'Tambah Data Berhasil!'
+        })</script>";
     } else {
-        echo "Menu gagal ditambahkan";
+        echo "<script>    
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-right',
+            iconColor: 'white',
+            customClass: {
+                popup: 'colored-toast'
+            },
+            showConfirmButton: false,
+            timer: 1500,
+            timerProgressBar: true
+        })
+   
+            Toast.fire({
+                icon: 'error',
+                title: 'Tambah Data Gagal!'
+            })
+        </script>";
     }
 }
 ?>

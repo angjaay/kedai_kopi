@@ -9,7 +9,7 @@ if (isset($_POST['submit'])) {
     $login = $user->login($id, $password);
     if ($login) {
         // Registration Success
-        header("location:../index.php");
+        header("location:../index.php?p=sukses");
     } else {
         // Registration Failed
         echo 'Wrong username or password';

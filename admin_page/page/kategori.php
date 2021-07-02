@@ -4,9 +4,42 @@ if (isset($_POST['submit'])) {
     $id_kat = $_POST['id_kategori'];
     $nama_kat = $_POST['nama_kategori'];
     if ($kategori->store($id_kat, $nama_kat)) {
-        echo "Menu berhasil ditambah";
+        echo "<script>
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-right',
+            iconColor: 'white',
+            customClass: {
+                popup: 'colored-toast'
+            },
+            showConfirmButton: false,
+            timer: 1500,
+            timerProgressBar: true
+        })
+
+        Toast.fire({
+            icon: 'success',
+            title: 'Tambah Data Berhasil!'
+        })</script>";
     } else {
-        echo "Menu gagal ditambahkan";
+        echo "<script>    
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-right',
+            iconColor: 'white',
+            customClass: {
+                popup: 'colored-toast'
+            },
+            showConfirmButton: false,
+            timer: 1500,
+            timerProgressBar: true
+        })
+   
+            Toast.fire({
+                icon: 'error',
+                title: 'Tambah Data Gagal!'
+            })
+        </script>";
     }
 }
 ?>
@@ -98,9 +131,7 @@ if (isset($_POST['submit'])) {
                                         <a href="?p=edit_kategori&e=<?php echo $id_menu ?>">
                                             <button type="button" class="btn btn-success btn-block align-items-right text-white">Edit</button>
                                         </a>
-                                        <a href="delete_kategori.php?d=<?php echo $id_menu ?>">
-                                            <button type="button" class="btn btn-danger btn-block text-white" onclick="validate()">Delete</button>
-                                        </a>
+
                                     </td>
                                 </tr>
                             <?php $i++;
@@ -113,4 +144,22 @@ if (isset($_POST['submit'])) {
     </div>
     <!-- Column -->
 </div>
+<script>
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-right',
+        iconColor: 'white',
+        customClass: {
+            popup: 'colored-toast'
+        },
+        showConfirmButton: false,
+        timer: 1500,
+        timerProgressBar: true
+    })
+
+    await Toast.fire({
+        icon: 'success',
+        title: 'Success'
+    })
+</script>
 <!-- Row -->

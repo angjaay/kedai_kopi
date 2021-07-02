@@ -16,6 +16,8 @@ if ($_SESSION['login']) {
     $transaksi = new Transaksi();
     $detail_transaksi = new DetailTransaksi();
 
+
+
     $kasir = $user->get_user($id);
 
     if (!$user->get_session()) {
@@ -124,7 +126,30 @@ if ($_SESSION['login']) {
 
 
 
-
+        <?php
+        if (isset($_GET['p']) == 'sukses') {
+            //toast login sukses
+            echo "<script> const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-start',
+                showConfirmButton: false,
+                timer: 2000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+    
+           
+                Toast.fire({
+                    icon: 'success',
+                    title: 'Login berhasil'
+                })
+                </script>
+            ";
+        }
+        ?>
 
         <div class="row">
             <!--Sidebar-->
@@ -161,25 +186,9 @@ if ($_SESSION['login']) {
         </div>
     </div>
     </div>
-    <script src="plugins/bower_components/jquery/dist/jquery.min.js"></script>
-    <script>
-        const Toast = Swal.mixin({
-            toast: true,
-            position: 'top-start',
-            showConfirmButton: false,
-            timer: 2000,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-                toast.addEventListener('mouseenter', Swal.stopTimer)
-                toast.addEventListener('mouseleave', Swal.resumeTimer)
-            }
-        })
 
-        Toast.fire({
-            icon: 'success',
-            title: 'Login berhasil'
-        })
-    </script>
+    <script src="plugins/bower_components/jquery/dist/jquery.min.js"></script>
+
 </body>
 
 </html>
