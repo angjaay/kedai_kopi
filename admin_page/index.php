@@ -267,7 +267,7 @@ if ($_SESSION['login']) {
                     require_once 'page/dashboard.php';
                 } else if ($_GET['p'] == 'dashboard') {
                     require_once 'page/' . $_GET['p'] . '.php';
-                } else if ($_GET['p'] == 'menu') {
+                } else if ($_GET['p'] == 'menu' || $_REQUEST['p'] == 'menu') {
                     require_once 'page/' . $_GET['p'] . '.php';
                 } else if ($_GET['p'] == 'edit_menu') {
                     require_once 'page/' . $_GET['p'] . '.php';
@@ -304,24 +304,7 @@ if ($_SESSION['login']) {
     <!-- ============================================================== -->
     <script>
         function validate() {
-            event.preventDefault();
-            Swal.fire({
-                title: 'Yakin ingin menghapus?',
-                text: "You won't be able to revert this!",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Ya, hapus!'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    Swal.fire(
-                        'Berhasil!',
-                        'Data telah dihapus.',
-                        'success'
-                    )
-                }
-            })
+            confirm("Yakin ingin menghapus?");
         }
     </script>
 

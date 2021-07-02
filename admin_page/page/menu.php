@@ -136,7 +136,9 @@ if (isset($_POST['submit'])) {
                                         <a href="?p=edit_menu&e=<?php echo $id_menu ?>">
                                             <button type="button" class="btn btn-success btn-block align-items-right text-white">edit</button>
                                         </a>
-                                        <button type="button" class="btn btn-danger btn-block text-white" onclick="validate()">hapus</button>
+                                        <a href="page/delete_menu.php?d=<?php echo $id_menu ?>">
+                                            <button type="button" class="btn btn-danger btn-block text-white" onclick="validate()">hapus</button>
+                                        </a>
                                     </td>
                                 </tr>
                             <?php $i++;
