@@ -89,7 +89,7 @@ class Menu
                     '$nama_gambar'
                     )";
                     $result = mysqli_query($this->db, $sql2) or die(mysqli_connect_errno() . "Data cannot inserted");
-                    return header('location:../admin_page/index.php');
+                    return true;
                 }
             } else {
                 return false;
