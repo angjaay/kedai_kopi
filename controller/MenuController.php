@@ -119,8 +119,14 @@ class Menu
      * 
      * @return true OR false
      */
-    public function update($id_menu, $id_kategori, $nama_menu, $deskripsi, $harga, $status, $gambar, $id_menu_before)
+    public function update($id_menu_before)
     {
+        $nama_menu = $_POST['nama_menu'];
+        $id_menu = $_POST['id_menu'];
+        $id_kategori = $_POST['kategori'];
+        $status = $_POST['status'];
+        $deskripsi = $_POST['deskripsi'];
+        $harga = $_POST['harga'];
         // Input nama gambar
         $nama_gambar = $_FILES['gambar']['name'];
         $target_dir = "../assets/images/";
@@ -141,7 +147,7 @@ class Menu
                 deskripsi = '$deskripsi',
                 harga = '$harga',
                 status = '$status',
-                gambar = '$gambar'
+                gambar = '$nama_gambar'
                 WHERE id_menu = '$id_menu_before'
             ";
 

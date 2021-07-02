@@ -91,10 +91,14 @@ if (isset($_POST['submit'])) {
                                     </td>
 
                                     <td align="center" class="align-middle">
-                                        <a href="edit_kategori.php?e=<?php echo $data['id_kategori'] ?>">
+                                        <?php
+                                        $encry->word = $data['id_kategori'];
+                                        $id_menu = $encry->encr();
+                                        ?>
+                                        <a href="?p=edit_kategori&e=<?php echo $id_menu ?>">
                                             <button type="button" class="btn btn-success btn-block align-items-right text-white">Edit</button>
                                         </a>
-                                        <a href="delete_kategori.php?d=<?php echo $data['id_kategori'] ?>">
+                                        <a href="delete_kategori.php?d=<?php echo $id_menu ?>">
                                             <button type="button" class="btn btn-danger btn-block text-white" onclick="validate()">Delete</button>
                                         </a>
                                     </td>

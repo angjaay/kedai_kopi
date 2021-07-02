@@ -36,4 +36,34 @@ class Kategori
         $kategori = $result->fetch_all(MYSQLI_ASSOC);
         return $kategori;
     }
+
+    /**
+     * 
+     */
+    public function view($id)
+    {
+        $sql1 = "SELECT * FROM kategori WHERE id_kategori = '$id'";
+        $result = $this->db->query($sql1);
+        $kategori = $result->fetch_assoc();
+
+        return $kategori;
+    }
+
+    /**
+     * 
+     */
+    public function update($id_before)
+    {
+        $id_kategori = $_POST['id_kategori'];
+        $nama_kategori = $_POST['nama_kategori'];
+
+        $sql1 = "UPDATE kategori SET id_kategori = 
+            '$id_kategori', nama_kategori = '$nama_kategori' WHERE id_kategori = '$id_before'";
+        $query = $this->db->query($sql1);
+        if ($query == true) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
