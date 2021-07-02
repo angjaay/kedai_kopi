@@ -96,7 +96,13 @@ if (isset($_POST['submit'])) {
                                         <b>Kategori:</b> <?php echo $data['nama_kategori'] ?><br>
                                     </td>
                                     <td align="center" class="align-middle text-light">
-                                        <button type="button" class="btn btn-success btn-block align-items-right text-white">edit</button>
+                                        <?php
+                                        $encry->word = $data['id_menu'];
+                                        $id_menu = $encry->encr();
+                                        ?>
+                                        <a href="?p=edit_menu&e=<?php echo $id_menu ?>">
+                                            <button type="button" class="btn btn-success btn-block align-items-right text-white">edit</button>
+                                        </a>
                                         <button type="button" class="btn btn-danger btn-block text-white" onclick="validate()">hapus</button>
                                     </td>
                                 </tr>

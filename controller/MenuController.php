@@ -112,4 +112,65 @@ class Menu
 
         return $menu;
     }
+
+    /**
+     * Update menu
+     * @param $id_menu, $id_kategori, $nama_menu, $deskripsi, $harga, $status, $gambar
+     * 
+     * @return true OR false
+     */
+    public function update($id_menu, $id_kategori, $nama_menu, $deskripsi, $harga, $status, $gambar, $id_menu_before)
+    {
+        // Input nama gambar
+        $nama_gambar = $_FILES['gambar']['name'];
+        $target_dir = "../assets/images/";
+
+        $target_file = $target_dir . basename($_FILES['gambar']['name']);
+
+        // Select File type
+        $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+        // Valid file extensions
+        $extensions_arr = array("jpg", "jpeg", "png", "gif");
+        if (in_array($imageFileType, $extensions_arr)) {
+            // Upload file
+            if (move_uploaded_file($_FILES['gambar']['tmp_name'], $target_dir . $nama_gambar)) {
+                $sql1 = "UPDATE menu SET
+                id_menu = '$id_menu',
+                id_kategori = '$id_kategori',
+                nama_menu = '$nama_menu',
+                deskripsi = '$deskripsi',
+                harga = '$harga',
+                status = '$status',
+                gambar = '$gambar'
+                WHERE id_menu = '$id_menu_before'
+            ";
+
+                $query = $this->db->query($sql1);
+                $result = $query;
+                if ($result) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        }
+    }
+
+    /**
+     * Delete menu
+     * 
+     * @param $id
+     * @return true OR false
+     */
+    public function destroy($id)
+    {
+        $sql1 = "DELETE FROM menu WHERE id_menu = '$id'";
+        $query = $this->db->query($sql1);
+        $result = $query;
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

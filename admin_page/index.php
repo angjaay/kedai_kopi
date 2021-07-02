@@ -5,6 +5,7 @@ include_once('../controller/MenuController.php');
 include_once('../controller/TransaksiController.php');
 include_once('../controller/DetailTransaksiController.php');
 include_once('../controller/KategoriController.php');
+include_once('../controller/Function.php');
 if ($_SESSION['login']) {
     if (time() - $_SESSION["login_time_stamp"] > 600) {
         session_unset();
@@ -19,6 +20,7 @@ if ($_SESSION['login']) {
     $kasir = $user->get_user($id);
     $trans = new Transaksi();
     $detail_transaksi = new DetailTransaksi();
+    $encry = new Enkripsi();
 
     if (!$user->get_session()) {
         header("location:../public/login.php");
@@ -27,6 +29,11 @@ if ($_SESSION['login']) {
     if (isset($_GET['q'])) {
         $user->logout();
         header("location:../public/login.php");
+    }
+
+    if (isset($_GET['p'], $_GET['e'])) {
+        $encry->word = $_GET['e'];
+        $id_for_edit = $encry->decr();
     }
 } else {
     header("location:../public/login.php");
