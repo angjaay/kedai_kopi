@@ -133,7 +133,7 @@ if ($_SESSION['login']) {
                 toast: true,
                 position: 'top-start',
                 showConfirmButton: false,
-                timer: 2000,
+                timer: 3000,
                 timerProgressBar: true,
                 didOpen: (toast) => {
                     toast.addEventListener('mouseenter', Swal.stopTimer)
@@ -188,7 +188,19 @@ if ($_SESSION['login']) {
     </div>
 
     <script src="plugins/bower_components/jquery/dist/jquery.min.js"></script>
-
+    <script>
+        function inputcart() {
+            Swal.fire({
+                text: 'Toast with custom target',
+                target: '.container-fluid',
+                customClass: {
+                    container: 'position-absolute'
+                },
+                toast: true,
+                position: 'bottom-right'
+            })
+        }
+    </script>
 </body>
 
 </html>

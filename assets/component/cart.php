@@ -128,7 +128,7 @@ if (!empty($_SESSION['cart'])) {
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <input type="submit" value="Bayar Pesanan" name="bayar" class="btn btn-danger btn-block">
+                    <input type="submit" value="Bayar Pesanan" name="bayar" onclick="inputcart();" class="btn btn-danger btn-block">
                 </div>
             </div>
         </div>
