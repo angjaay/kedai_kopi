@@ -34,6 +34,9 @@ if (isset($_POST['submit'])) {
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/login.css">
+    <!-- sweetalert2 -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="sweetalert2.min.css">
 
 </head>
 
@@ -67,6 +70,7 @@ if (isset($_POST['submit'])) {
         </form>
     </div>
 
+    <script src="plugins/bower_components/jquery/dist/jquery.min.js"></script>
 </body>
 
 </html>
