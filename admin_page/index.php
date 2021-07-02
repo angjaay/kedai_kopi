@@ -303,8 +303,44 @@ if ($_SESSION['login']) {
     <!-- All Jquery -->
     <!-- ============================================================== -->
     <script>
-        function validate() {
-            confirm("Yakin ingin menghapus?");
+        function confirmation(ev) {
+            ev.preventDefault();
+            var urlToRedirect = ev.currentTarget.getAttribute('href'); //use currentTarget because the click may be on the nested i tag and not a tag causing the href to be empty
+            console.log(urlToRedirect); // verify if this is the right URL
+            Swal.fire({
+                    title: "Kamu Yakin?",
+                    text: "Sekali terhapus data tidak bisa kembali!",
+                    icon: "warning",
+                    showDenyButton: true,
+                    confirmButtonText: `Hapus`,
+                    dangerMode: true,
+                    denyButtonText: `Batal`,
+
+                    allowOutsideClick: () => {
+                        const popup = Swal.getPopup()
+                        popup.classList.remove('swal2-show')
+                        setTimeout(() => {
+                            popup.classList.add('animate__animated', 'animate__headShake')
+                        })
+                        setTimeout(() => {
+                            popup.classList.remove('animate__animated', 'animate__headShake')
+                        }, 500)
+                        return false
+                    }
+                })
+                .then((willDelete) => {
+
+                    // redirect with javascript here as per your logic after showing the alert using the urlToRedirect value
+
+                    if (willDelete.isConfirmed) {
+                        Swal.fire('Saved!', '', 'success', {
+                            timer: 1500
+                        })
+                        window.location = urlToRedirect;
+                    } else if (willDelete.isDenied) {
+                        Swal.fire('Data Aman!', '', 'info')
+                    }
+                });
         }
     </script>
 
