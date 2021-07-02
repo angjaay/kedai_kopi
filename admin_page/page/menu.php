@@ -136,9 +136,10 @@ if (isset($_POST['submit'])) {
                                         <a href="?p=edit_menu&e=<?php echo $id_menu ?>">
                                             <button type="button" class="btn btn-success btn-block align-items-right text-white">edit</button>
                                         </a>
-                                        <a href="page/delete_menu.php?d=<?php echo $id_menu ?>">
-                                            <button type="button" class="btn btn-danger btn-block text-white" onclick="validate()">hapus</button>
+                                        <a onclick="confirmation(event);" href="page/delete_menu.php?d=<?php echo $id_menu ?>">
+                                            <button type=" button" class="btn btn-danger btn-block text-white hapus">hapus</button>
                                         </a>
+
                                     </td>
                                 </tr>
                             <?php $i++;

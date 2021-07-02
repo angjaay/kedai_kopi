@@ -7,7 +7,7 @@ $encry = new Enkripsi();
 $encry->word = $_GET['d'];
 $id = $encry->decr();
 if ($menu->destroy($id)) {
-    return header('location:../../index.php?p=menu');
+    return header('location:../index.php?p=menu');
 } else {
-    return header('location:../../index.php?p=menu');
+    return header('location:../index.php?p=menu');
 }
