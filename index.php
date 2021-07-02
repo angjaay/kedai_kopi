@@ -191,13 +191,11 @@ if ($_SESSION['login']) {
     <script>
         function inputcart() {
             Swal.fire({
-                text: 'Toast with custom target',
-                target: '.container-fluid',
-                customClass: {
-                    container: 'position-absolute'
-                },
-                toast: true,
-                position: 'bottom-right'
+                icon: 'warning',
+                title: 'Pilih menu terlebih dahulu!',
+                timer: 1500,
+                type: 'danger',
+                confirmButtonClass: "btn-danger"
             })
         }
     </script>
