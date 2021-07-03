@@ -134,10 +134,10 @@ if (isset($_POST['submit'])) {
                                         $id_menu = $encry->encr();
                                         ?>
                                         <a href="?p=edit_menu&e=<?php echo $id_menu ?>">
-                                            <button type="button" class="btn btn-success btn-block align-items-right text-white">edit</button>
+                                            <button type="button" class="btn btn-success btn-block align-items-right text-white">Edit</button>
                                         </a>
                                         <a onclick="confirmation(event);" href="page/delete_menu.php?d=<?php echo $id_menu ?>">
-                                            <button type=" button" class="btn btn-danger btn-block text-white hapus">hapus</button>
+                                            <button type=" button" class="btn btn-danger btn-block text-white hapus">Hapus</button>
                                         </a>
 
                                     </td>

@@ -68,8 +68,8 @@ if (isset($_POST['submit'])) {
                             <input type="text" class="form-control" id="nama_kategori" name="nama_kategori">
                         </div>
                         <div>
-                            <input type="submit" name="submit" value="submit" class="btn btn-primary">
-                            <input type="reset" name="cancel" value="cancel" class="btn btn-light">
+                            <input type="submit" name="submit" value="Tambah" class="btn btn-primary">
+                            <input type="reset" name="cancel" value="Bersihkan" class="btn btn-light">
                         </div>
                     </div>
                 </form>
