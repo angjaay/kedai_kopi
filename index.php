@@ -2,10 +2,12 @@
 session_start();
 include_once('./controller/UserController.php');
 include_once('./controller/MenuController.php');
+include_once('./controller/KategoriController.php');
 include_once('./controller/TransaksiController.php');
 include_once('./controller/DetailTransaksiController.php');
+include_once('./controller/Function.php');
 if ($_SESSION['login']) {
-    if (time() - $_SESSION["login_time_stamp"] > 600) {
+    if (time() - $_SESSION["login_time_stamp"] > 6000) {
         session_unset();
         session_destroy();
         header("Location:public/login.php");
@@ -13,9 +15,23 @@ if ($_SESSION['login']) {
     $id = $_SESSION['id'];
     $user = new User();
     $menu = new Menu();
+    $kategori = new Kategori();
     $transaksi = new Transaksi();
     $detail_transaksi = new DetailTransaksi();
+    $encry = new Enkripsi();
 
+    if (isset($_GET['k'], $_GET['i'])) {
+
+        foreach ($kategori->get_all() as $data) {
+            if ($_GET['k'] == $data['nama_kategori']) {
+                $encry->word = $_GET['i'];
+                $id_for_categorize = $encry->decr();
+                $data_menu = $menu->categorize($id_for_categorize);
+            }
+        }
+    } else {
+        $data_menu = $menu->get_all();
+    }
 
 
     $kasir = $user->get_user($id);
@@ -161,7 +177,7 @@ if ($_SESSION['login']) {
                 <div class="col-md-8">
                     <div class="row">
                         <?php
-                        foreach ($menu->get_all() as $data) { ?>
+                        foreach ($data_menu as $data) { ?>
                             <div class="col-md-4">
                                 <div class="container">
                                     <div class="harga">Rp. <?php echo $data["harga"] ?></div>
