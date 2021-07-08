@@ -90,7 +90,7 @@ if (isset($_POST['edit'])) {
                     <div class="custom-file">
                         <input name="gambar" type="file" class="custom-file-input" id="customFile">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group mt-3">
                         <p><img src="../assets/images/<?php echo $data_menu['gambar'] ?>" alt="" style="height: 100px; width: auto; border-radius: 15px;"></p>
                         <small><?php echo $data_menu['gambar'] ?></small>
                     </div>
@@ -98,8 +98,10 @@ if (isset($_POST['edit'])) {
                     <br>
                     <div>
                         <input type="submit" name="edit" value="Ubah menu" class="btn btn-primary">
+                        <input type="button" name="edit" value="Batal" onclick="javascript:window.history.back();" class="btn btn-warning">
                     </div>
                 </form>
+
             </tbody>
 
         </div>

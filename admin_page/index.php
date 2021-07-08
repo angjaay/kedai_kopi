@@ -7,7 +7,7 @@ include_once('../controller/DetailTransaksiController.php');
 include_once('../controller/KategoriController.php');
 include_once('../controller/Function.php');
 if ($_SESSION['login']) {
-    if (time() - $_SESSION["login_time_stamp"] > 600) {
+    if (time() - $_SESSION["login_time_stamp"] > 6000) {
         session_unset();
         session_destroy();
         header("Location:../index.php");
@@ -57,6 +57,7 @@ if ($_SESSION['login']) {
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="19x16" href="plugins/images/favicon copy.png">
     <link rel="shortcut icon" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" type="image/x-icon">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!-- sweetalert2 -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="sweetalert2.min.css">
