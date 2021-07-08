@@ -11,11 +11,11 @@
                 <div class="circle-tile-heading green "><i class="fa fa-utensils fa-fw fa-3x"></i></div>
             </a>
             <div class="circle-tile-content green ">
-                <div class="circle-tile-description text-faded"> Data Menu </div>
+                <div class="circle-tile-description text-faded">Menu </div>
                 <div class="circle-tile-number text-faded "><?php
                                                             echo $data_menu['jmlMenu'];
                                                             ?></div>
-                <a class="circle-tile-footer" href="index.php?p=menu">Lihat <i class="fa fa-chevron-circle-right"></i></a>
+                <a class="circle-tile-footer" href="index.php?p=menu">Lihat data <i class="fa fa-chevron-circle-right"></i></a>
             </div>
         </div>
 
@@ -34,7 +34,7 @@
                 <div class="circle-tile-number text-faded "><?php
                                                             echo $data_transaksi['jmlTrans'];
                                                             ?></div>
-                <a class="circle-tile-footer" href="index.php?p=transaksi">Lihat <i class="fa fa-chevron-circle-right"></i></a>
+                <a class="circle-tile-footer" href="index.php?p=transaksi">Lihat data <i class="fa fa-chevron-circle-right"></i></a>
             </div>
         </div>
 
@@ -52,7 +52,7 @@
                 <div class="circle-tile-number text-faded "><?php
                                                             echo $data_kasir['jmlKasir'];
                                                             ?></div>
-                <a class="circle-tile-footer" href="index.php?p=user">Lihat <i class="fa fa-chevron-circle-right"></i></a>
+                <a class="circle-tile-footer" href="index.php?p=user">Lihat data <i class="fa fa-chevron-circle-right"></i></a>
             </div>
         </div>
 
