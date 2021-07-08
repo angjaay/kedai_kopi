@@ -61,6 +61,7 @@ if ($_SESSION['login']) {
     <!-- sweetalert2 -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="sweetalert2.min.css">
+    <link rel="stylesheet" href="css/card.css">
     <!-- Custom CSS -->
     <link href="css/style.min.css" rel="stylesheet">
 
