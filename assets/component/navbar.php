@@ -6,7 +6,8 @@ if (isset($_SESSION['id'])) {
     $kasir = $user->get_user($id);
 }
 ?>
-<div class="col-md-11 fluid p-3">
+<div class="col-md-11 fluid p-3 ml-auto" style="margin-top:100px;">
+    <div class="col-md-11 fixed-top p-2 ml-auto">
     <nav class="navbar navbar-default navbar-expand-lg navbar-light ">
 
         <div class="">
@@ -31,10 +32,9 @@ if (isset($_SESSION['id'])) {
                                 </button>
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="admin_page/index.php">Admin Page</a>
-                                    <a class="dropdown-item" href="#">Transaksi</a>
-                                    <a class="dropdown-item" href="#">Akun</a>
+                                    <a class="dropdown-item" href="admin_page/index.php?p=transaksi">Transaksi</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="index.php?q=logout">Logout <i class="bi bi-power"></i></a>
+                                    <a class="dropdown-item" href="index.php?q=logout" onclick="keluar(event);">Logout <i class="bi bi-power"></i></a>
                                 </div>
                             </div>
                         </li>
@@ -51,3 +51,4 @@ if (isset($_SESSION['id'])) {
             </div>
         </div>
     </nav>
+</div>
