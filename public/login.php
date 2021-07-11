@@ -13,6 +13,7 @@ if (isset($_POST['submit'])) {
     } else {
         // Registration Failed
         echo 'Wrong username or password';
+        header("location:?p=gagal");
     }
 }
 ?>
@@ -55,7 +56,18 @@ if (isset($_POST['submit'])) {
         }
     </script>
 
-
+        <?php
+    if (isset($_GET['p']) == 'gagal') {
+        echo "<script>
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Password atau Username salah!'
+            
+          })
+          </script>";
+    }
+    ?>
 
     <div class="login-dark">
         <form method="post" action="login.php" name="login">
