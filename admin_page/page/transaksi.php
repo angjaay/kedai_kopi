@@ -48,7 +48,7 @@ $data_trans = $trans->index();
                                     </td>
                                     <td align="center" class="align-middle">
 
-                                        <button type="button" class="btn btn-info btn-block align-items-right text-white view_order" data-id="<?php echo $data['no_struk'] ?>">View Order</button>
+                                        <button type="button" class="btn btn-info btn-block align-items-right text-white view_order" data-id="<?php echo $data['no_struk'] ?>" data-toggle="modal" data-target="#myModal">View Order</button>
 
                                     </td>
                                 </tr>
@@ -61,6 +61,63 @@ $data_trans = $trans->index();
         </div>
     </div>
     <!-- Column -->
+</div>
+<!-- The Modal -->
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Detail Transaksi</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <table class="table table-rounded">
+                            <thead>
+                                <th>Menu</th>
+                                <th>Jumlah</th>
+                            </thead>
+                            <tbody>
+                                <!-- isi tabel -->
+                                <tr>
+                                    <td><span><b>Ayam Goreng</b></span><br>
+                                        <small>Rp. 14000</small>
+                                    </td>
+                                    <td>
+                                        <p>6</p>
+                                    </td>
+                                </tr>
+                                <!-- end isi tabel -->
+
+                                <!-- total -->
+                                <tr>
+                                    <td>hr<b>Total</b></td>
+                                    <td>Rp. 14000</td>
+                                </tr>
+                                <!-- end total -->
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success">Konfirmasi</button>
+
+                <button type="button" class="btn btn-danger" data-dismiss="modal">tutup</button>
+
+            </div>
+
+        </div>
+    </div>
 </div>
 <script>
     $('.view_order').click(function() {
