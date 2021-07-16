@@ -96,7 +96,7 @@ $data_trans = $trans->index();
 
                                 <!-- total -->
                                 <tr>
-                                    <td>hr<b>Total</b></td>
+                                    <td><b>Total</b></td>
                                     <td>Rp. 14000</td>
                                 </tr>
                                 <!-- end total -->
